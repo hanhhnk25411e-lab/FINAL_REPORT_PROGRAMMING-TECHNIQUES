@@ -2,13 +2,34 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>494</width>
-    <height>301</height>
+    <width>490</width>
+    <height>260</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>490</width>
+    <height>260</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>490</width>
+    <height>260</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -44,10 +65,11 @@
     </property>
     <property name="font">
      <font>
-      <family>MS Serif</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Segoe UI Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="whatsThis">
@@ -55,6 +77,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(94, 167, 15);
+
+font: 87 12pt &quot;Segoe UI Black&quot;;
 
 color: rgb(255, 248, 23);</string>
     </property>
@@ -73,10 +97,11 @@ color: rgb(255, 248, 23);</string>
     </property>
     <property name="font">
      <font>
-      <family>MS Serif</family>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Segoe UI Black</family>
+      <pointsize>12</pointsize>
+      <weight>10</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="whatsThis">
@@ -84,6 +109,7 @@ color: rgb(255, 248, 23);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(94, 167, 15);
+font: 87 12pt &quot;Segoe UI Black&quot;;
 
 color: rgb(255, 248, 23);</string>
     </property>
@@ -92,17 +118,6 @@ color: rgb(255, 248, 23);</string>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>494</width>
-     <height>18</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

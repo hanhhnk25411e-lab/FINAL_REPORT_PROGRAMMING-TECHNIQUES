@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\K25411_KTLT\projectKTLT\uiBIAWEB\BIAWEB.ui'
+# Form implementation generated from reading ui file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\uiBIAWEB\BIAWEB.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -12,17 +12,21 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(494, 300)
+        MainWindow.setEnabled(True)
+        MainWindow.resize(490, 260)
+        MainWindow.setMinimumSize(QtCore.QSize(490, 260))
+        MainWindow.setMaximumSize(QtCore.QSize(490, 260))
+        MainWindow.setBaseSize(QtCore.QSize(0, 0))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(-6, 0, 501, 271))
+        self.label.setGeometry(QtCore.QRect(-6, 0, 501, 261))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\K25411_KTLT\\projectKTLT\\uiBIAWEB\\../image/nammoadidaphat.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Dung_BIAWEB\\uiBIAWEB\\../image/nammoadidaphat.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(230, 170, 91, 21))
+        self.pushButton.setGeometry(QtCore.QRect(250, 170, 91, 21))
         font = QtGui.QFont()
         font.setFamily("MS Serif")
         font.setPointSize(11)
@@ -34,7 +38,7 @@ class Ui_MainWindow(object):
 "color: rgb(255, 248, 23);")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(340, 170, 91, 21))
+        self.pushButton_2.setGeometry(QtCore.QRect(370, 170, 91, 21))
         font = QtGui.QFont()
         font.setFamily("MS Serif")
         font.setPointSize(11)
@@ -46,13 +50,6 @@ class Ui_MainWindow(object):
 "color: rgb(255, 248, 23);")
         self.pushButton_2.setObjectName("pushButton_2")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 494, 18))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
