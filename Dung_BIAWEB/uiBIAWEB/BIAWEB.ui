@@ -9,20 +9,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>490</width>
-    <height>260</height>
+    <width>700</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>490</width>
-    <height>260</height>
+    <width>700</width>
+    <height>400</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>490</width>
-    <height>260</height>
+    <width>700</width>
+    <height>400</height>
    </size>
   </property>
   <property name="baseSize">
@@ -38,35 +38,35 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-6</x>
+      <x>0</x>
       <y>0</y>
-      <width>501</width>
-      <height>261</height>
+      <width>701</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../image/nammoadidaphat.png</pixmap>
+     <pixmap>../image/Bia.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButtonSignIn">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>170</y>
-      <width>91</width>
-      <height>21</height>
+      <x>440</x>
+      <y>240</y>
+      <width>161</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Black</family>
-      <pointsize>12</pointsize>
+      <family>Rockwell Extra Bold</family>
+      <pointsize>20</pointsize>
       <weight>10</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -77,44 +77,13 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(94, 167, 15);
+font: 81 20pt &quot;Rockwell Extra Bold&quot;;
 
-font: 87 12pt &quot;Segoe UI Black&quot;;
 
 color: rgb(255, 248, 23);</string>
     </property>
     <property name="text">
      <string>Sign In</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>170</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe UI Black</family>
-      <pointsize>12</pointsize>
-      <weight>10</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#005500;&quot;&gt;Sign Up&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(94, 167, 15);
-font: 87 12pt &quot;Segoe UI Black&quot;;
-
-color: rgb(255, 248, 23);</string>
-    </property>
-    <property name="text">
-     <string>Sign Up</string>
     </property>
    </widget>
   </widget>
