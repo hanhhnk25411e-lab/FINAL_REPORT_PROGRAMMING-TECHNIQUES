@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1045</width>
+    <height>706</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1051</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/customer.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="input_search">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>30</y>
+      <width>401</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Find customer's name, phone number</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_add">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>40</y>
+      <width>261</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(51, 89, 23);
+color: rgb(255, 255, 255);
+</string>
+    </property>
+    <property name="text">
+     <string>Add new customer</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table_customers">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>280</y>
+      <width>731</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(150, 186, 121);
+background-color: rgb(194, 216, 177);</string>
+    </property>
+    <property name="rowCount">
+     <number>10</number>
+    </property>
+    <property name="columnCount">
+     <number>5</number>
+    </property>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <row/>
+    <column>
+     <property name="text">
+      <string>Full Name</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>150</red>
+       <green>186</green>
+       <blue>121</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Pet</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>150</red>
+       <green>186</green>
+       <blue>121</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Phone Number</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>150</red>
+       <green>186</green>
+       <blue>121</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Service</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>150</red>
+       <green>186</green>
+       <blue>121</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Status</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>150</red>
+       <green>186</green>
+       <blue>121</blue>
+      </color>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>Nguyen Van A</string>
+     </property>
+    </item>
+    <item row="0" column="1">
+     <property name="text">
+      <string>Corgi</string>
+     </property>
+    </item>
+    <item row="0" column="2">
+     <property name="text">
+      <string>091234567</string>
+     </property>
+    </item>
+    <item row="0" column="3">
+     <property name="text">
+      <string>Vaccination</string>
+     </property>
+    </item>
+    <item row="0" column="4">
+     <property name="text">
+      <string>Done</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1045</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
