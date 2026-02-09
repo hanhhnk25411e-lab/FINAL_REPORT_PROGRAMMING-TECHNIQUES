@@ -30,7 +30,7 @@
             "phone": "0396749657",
             "assigned_pets": "3 pets",
             "shift": "Night",
-            "status": "On leave"
+            "status": "Active"
         },
         {
             "full_name": "Trương Văn E",
@@ -74,7 +74,7 @@
         },
         {
             "full_name": "Hồ Văn J",
-            "role": "Doctor",
+            "role": "Caretaker",
             "phone": "0395836502",
             "assigned_pets": "2 pets",
             "shift": "Evening",

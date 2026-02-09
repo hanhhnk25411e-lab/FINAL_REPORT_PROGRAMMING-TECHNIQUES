@@ -26,3 +26,10 @@ class Employees(MyCollections):
             })
         with open(filename, 'w', encoding='utf8') as outfile:
             json.dump(data, outfile, ensure_ascii=False, indent=4)
+
+    def update_employee(self, emp: Employee):
+        for i, e in enumerate(self.list):
+            if e.full_name == emp.full_name:
+                self.list[i] = emp
+                return True
+        return False

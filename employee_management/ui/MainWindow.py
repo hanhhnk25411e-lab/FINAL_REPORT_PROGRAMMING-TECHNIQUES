@@ -25,6 +25,8 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.lineEditEnter = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditEnter.setGeometry(QtCore.QRect(500, 30, 161, 21))
+        self.lineEditEnter.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);")
         self.lineEditEnter.setObjectName("lineEditEnter")
         self.lineEditFullName = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditFullName.setGeometry(QtCore.QRect(430, 100, 241, 20))
@@ -72,14 +74,57 @@ class Ui_MainWindow(object):
         self.verticalLayoutEmployee.setObjectName("verticalLayoutEmployee")
         self.verticalLayout_2.addLayout(self.verticalLayoutEmployee)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.pushButtonUpdate = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButtonUpdate.setGeometry(QtCore.QRect(330, 290, 161, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButtonUpdate.setFont(font)
+        self.pushButtonUpdate.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(123, 177, 95);\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 13pt \"Segoe UI Black\";\n"
+"    border-radius: 6px;\n"
+"    padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 200, 110);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(90, 150, 70);\n"
+"}\n"
+"")
+        self.pushButtonUpdate.setObjectName("pushButtonUpdate")
         self.pushButtonAdd = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButtonAdd.setGeometry(QtCore.QRect(510, 290, 161, 31))
         font = QtGui.QFont()
-        font.setStrikeOut(False)
+        font.setFamily("Segoe UI Black")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.pushButtonAdd.setFont(font)
-        self.pushButtonAdd.setStyleSheet("background-color: rgb(123, 177, 95);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 13pt \".AppleSystemUIFont\";")
+        self.pushButtonAdd.setStyleSheet("QPushButton {\n"
+"    background-color: rgb(123, 177, 95);\n"
+"    color: rgb(255, 255, 255);\n"
+"    font: 13pt \"Segoe UI Black\";\n"
+"    border-radius: 6px;\n"
+"    padding: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(140, 200, 110);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(90, 150, 70);\n"
+"}\n"
+"")
         self.pushButtonAdd.setObjectName("pushButtonAdd")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
@@ -97,4 +142,5 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Employees Management"))
         self.lineEditEnter.setPlaceholderText(_translate("MainWindow", "Enter information"))
-        self.pushButtonAdd.setText(_translate("MainWindow", "Add new employee"))
+        self.pushButtonUpdate.setText(_translate("MainWindow", "Update information"))
+        self.pushButtonAdd.setText(_translate("MainWindow", "Add a new employee"))

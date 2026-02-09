@@ -54,6 +54,10 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
     <property name="placeholderText">
      <string>Enter information</string>
     </property>
@@ -189,6 +193,46 @@
      </layout>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pushButtonUpdate">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>290</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Black</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(123, 177, 95);
+    color: rgb(255, 255, 255);
+    font: 13pt &quot;Segoe UI Black&quot;;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 200, 110);
+}
+
+QPushButton:pressed {
+    background-color: rgb(90, 150, 70);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Update information</string>
+    </property>
+   </widget>
    <widget class="QPushButton" name="pushButtonAdd">
     <property name="geometry">
      <rect>
@@ -200,16 +244,33 @@
     </property>
     <property name="font">
      <font>
-      <strikeout>false</strikeout>
+      <family>Segoe UI Black</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(123, 177, 95);
-color: rgb(255, 255, 255);
-font: 13pt &quot;.AppleSystemUIFont&quot;;</string>
+     <string notr="true">QPushButton {
+    background-color: rgb(123, 177, 95);
+    color: rgb(255, 255, 255);
+    font: 13pt &quot;Segoe UI Black&quot;;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+QPushButton:hover {
+    background-color: rgb(140, 200, 110);
+}
+
+QPushButton:pressed {
+    background-color: rgb(90, 150, 70);
+}
+</string>
     </property>
     <property name="text">
-     <string>Add new employee</string>
+     <string>Add a new employee</string>
     </property>
    </widget>
   </widget>
