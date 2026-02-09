@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/MainWindow.ui'
+# Form implementation generated from reading ui file '/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/ui/MainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 341))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/Quản lý nhân viên (1).png"))
+        self.label.setPixmap(QtGui.QPixmap("/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/ui/../images/employee_management.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.lineEditEnter = QtWidgets.QLineEdit(parent=self.centralwidget)
@@ -28,12 +28,16 @@ class Ui_MainWindow(object):
         self.lineEditEnter.setObjectName("lineEditEnter")
         self.lineEditFullName = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditFullName.setGeometry(QtCore.QRect(430, 100, 241, 20))
+        self.lineEditFullName.setStyleSheet("background-color: rgb(17, 44, 13);")
         self.lineEditFullName.setObjectName("lineEditFullName")
         self.lineEditRole = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditRole.setGeometry(QtCore.QRect(430, 130, 241, 20))
+        self.lineEditRole.setStyleSheet("background-color: rgb(17, 44, 13);\n"
+"")
         self.lineEditRole.setObjectName("lineEditRole")
         self.lineEditPhone = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditPhone.setGeometry(QtCore.QRect(430, 160, 241, 20))
+        self.lineEditPhone.setStyleSheet("background-color: rgb(17, 44, 13);")
         self.lineEditPhone.setObjectName("lineEditPhone")
         self.lineEdit_6 = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEdit_6.setGeometry(QtCore.QRect(430, 220, 241, 20))
@@ -43,15 +47,20 @@ class Ui_MainWindow(object):
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.lineEditShift = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditShift.setGeometry(QtCore.QRect(430, 220, 241, 20))
+        self.lineEditShift.setStyleSheet("background-color: rgb(17, 44, 13);")
         self.lineEditShift.setObjectName("lineEditShift")
         self.lineEditAssignedPets = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditAssignedPets.setGeometry(QtCore.QRect(430, 190, 241, 20))
+        self.lineEditAssignedPets.setStyleSheet("background-color: rgb(17, 44, 13);\n"
+"")
         self.lineEditAssignedPets.setObjectName("lineEditAssignedPets")
         self.lineEditStatus = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEditStatus.setGeometry(QtCore.QRect(430, 250, 241, 20))
+        self.lineEditStatus.setStyleSheet("background-color: rgb(17, 44, 13);")
         self.lineEditStatus.setObjectName("lineEditStatus")
         self.scrollArea = QtWidgets.QScrollArea(parent=self.centralwidget)
         self.scrollArea.setGeometry(QtCore.QRect(60, 100, 241, 211))
+        self.scrollArea.setStyleSheet("background-color: rgb(17, 41, 13);")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
@@ -69,6 +78,7 @@ class Ui_MainWindow(object):
         font.setStrikeOut(False)
         self.pushButtonAdd.setFont(font)
         self.pushButtonAdd.setStyleSheet("background-color: rgb(123, 177, 95);\n"
+"color: rgb(255, 255, 255);\n"
 "font: 13pt \".AppleSystemUIFont\";")
         self.pushButtonAdd.setObjectName("pushButtonAdd")
         MainWindow.setCentralWidget(self.centralwidget)

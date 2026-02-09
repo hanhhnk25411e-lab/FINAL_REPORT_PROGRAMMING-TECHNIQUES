@@ -39,7 +39,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Quản lý nhân viên (1).png</pixmap>
+     <pixmap>../images/employee_management.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -67,6 +67,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEditRole">
     <property name="geometry">
@@ -77,6 +80,10 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);
+</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEditPhone">
     <property name="geometry">
@@ -86,6 +93,9 @@
       <width>241</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_6">
@@ -117,6 +127,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEditAssignedPets">
     <property name="geometry">
@@ -126,6 +139,10 @@
       <width>241</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);
+</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditStatus">
@@ -137,6 +154,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 44, 13);</string>
+    </property>
    </widget>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
@@ -146,6 +166,9 @@
       <width>241</width>
       <height>211</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(17, 41, 13);</string>
     </property>
     <property name="widgetResizable">
      <bool>true</bool>
@@ -182,6 +205,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(123, 177, 95);
+color: rgb(255, 255, 255);
 font: 13pt &quot;.AppleSystemUIFont&quot;;</string>
     </property>
     <property name="text">
