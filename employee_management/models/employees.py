@@ -9,7 +9,7 @@ class Employees(MyCollections):
         with open(filename, encoding='utf8') as json_file:
             data = json.load(json_file)
             for p in data['employees']:
-                it=Employee(p['full_name'],p['role'],p['phone'],p['assigned_pets'],p['shift'],p['status'])
+                it=Employee(p['full_name'],p['id'],p['gender'],p['role'],p['phone'],p['assigned_pets'],p['status'])
                 self.add_item(it)
 
 
@@ -18,10 +18,11 @@ class Employees(MyCollections):
         for it in self.list:
             data['employees'].append({
                 'full_name': it.full_name,
+                'id': it.id,
+                'gender': it.gender,
                 'role': it.role,
                 'phone': it.phone,
                 'assigned_pets': it.assigned_pets,
-                'shift': it.shift,
                 'status': it.status,
             })
         with open(filename, 'w', encoding='utf8') as outfile:

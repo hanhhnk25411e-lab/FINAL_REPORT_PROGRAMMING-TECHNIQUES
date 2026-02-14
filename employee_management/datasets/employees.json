@@ -2,82 +2,92 @@
     "employees": [
         {
             "full_name": "Nguyễn Văn A",
+            "id": "NV001",
+            "gender": "Male",
             "role": "Doctor",
             "phone": "0486394866",
             "assigned_pets": "3 pets",
-            "shift": "Morning",
             "status": "Active"
         },
         {
             "full_name": "Lê Thị B",
+            "id": "NV002",
+            "gender": "Female",
             "role": "Caretaker",
             "phone": "0694769442",
             "assigned_pets": "2 pets",
-            "shift": "Afternoon",
             "status": "Active"
         },
         {
             "full_name": "Nguyễn Thị C",
+            "id": "NV003",
+            "gender": "Female",
             "role": "Caretaker",
             "phone": "0385743957",
             "assigned_pets": "4 pets",
-            "shift": "Evening",
             "status": "On leave"
         },
         {
             "full_name": "Phạm Văn D",
+            "id": "NV004",
+            "gender": "Male",
             "role": "Doctor",
             "phone": "0396749657",
             "assigned_pets": "3 pets",
-            "shift": "Night",
             "status": "Active"
         },
         {
-            "full_name": "Trương Văn E",
+            "full_name": "Trương Thị E",
+            "id": "NV005",
+            "gender": "Female",
             "role": "Doctor",
             "phone": "0937539672",
             "assigned_pets": "3 pets",
-            "shift": "Evening",
             "status": "Active"
         },
         {
-            "full_name": "Võ Thị F",
+            "full_name": "Võ Văn F",
+            "id": "NV006",
+            "gender": "Male",
             "role": "Caretaker",
             "phone": "0485837592",
             "assigned_pets": "4 pets",
-            "shift": "Morning",
             "status": "Acitve"
         },
         {
-            "full_name": "Phạm Văn G",
+            "full_name": "Phạm Thị G",
+            "id": "NV007",
+            "gender": "Female",
             "role": "Doctor",
             "phone": "0320574482",
             "assigned_pets": "2 pets",
-            "shift": "Afternoon",
             "status": "Active"
         },
         {
             "full_name": "Dương Văn H",
+            "id": "NV008",
+            "gender": "Male",
             "role": "Doctor",
             "phone": "0938672573",
             "assigned_pets": "3 pets",
-            "shift": "Morning",
             "status": "On leave"
         },
         {
             "full_name": "Trần Thị I",
+            "id": "NV009",
+            "gender": "Female",
             "role": "Caretaker",
             "phone": "0395673957",
             "assigned_pets": "4 pets",
-            "shift": "Night",
             "status": "Active"
         },
         {
             "full_name": "Hồ Văn J",
+            "id": "NV010",
+            "gender": "Male",
             "role": "Caretaker",
             "phone": "0395836502",
             "assigned_pets": "2 pets",
-            "shift": "Evening",
             "status": "Active"
         }
     ]
