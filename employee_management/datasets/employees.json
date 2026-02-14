@@ -1,0 +1,84 @@
+{
+    "employees": [
+        {
+            "full_name": "Nguyễn Văn A",
+            "role": "Doctor",
+            "phone": "0486394866",
+            "assigned_pets": "3 pets",
+            "shift": "Morning",
+            "status": "Active"
+        },
+        {
+            "full_name": "Lê Thị B",
+            "role": "Caretaker",
+            "phone": "0694769442",
+            "assigned_pets": "2 pets",
+            "shift": "Afternoon",
+            "status": "Active"
+        },
+        {
+            "full_name": "Nguyễn Thị C",
+            "role": "Caretaker",
+            "phone": "0385743957",
+            "assigned_pets": "4 pets",
+            "shift": "Evening",
+            "status": "On leave"
+        },
+        {
+            "full_name": "Phạm Văn D",
+            "role": "Doctor",
+            "phone": "0396749657",
+            "assigned_pets": "3 pets",
+            "shift": "Night",
+            "status": "Active"
+        },
+        {
+            "full_name": "Trương Văn E",
+            "role": "Doctor",
+            "phone": "0937539672",
+            "assigned_pets": "3 pets",
+            "shift": "Evening",
+            "status": "Active"
+        },
+        {
+            "full_name": "Võ Thị F",
+            "role": "Caretaker",
+            "phone": "0485837592",
+            "assigned_pets": "4 pets",
+            "shift": "Morning",
+            "status": "Acitve"
+        },
+        {
+            "full_name": "Phạm Văn G",
+            "role": "Doctor",
+            "phone": "0320574482",
+            "assigned_pets": "2 pets",
+            "shift": "Afternoon",
+            "status": "Active"
+        },
+        {
+            "full_name": "Dương Văn H",
+            "role": "Doctor",
+            "phone": "0938672573",
+            "assigned_pets": "3 pets",
+            "shift": "Morning",
+            "status": "On leave"
+        },
+        {
+            "full_name": "Trần Thị I",
+            "role": "Caretaker",
+            "phone": "0395673957",
+            "assigned_pets": "4 pets",
+            "shift": "Night",
+            "status": "Active"
+        },
+        {
+            "full_name": "Hồ Văn J",
+            "role": "Caretaker",
+            "phone": "0395836502",
+            "assigned_pets": "2 pets",
+            "shift": "Evening",
+            "status": "Active"
+        }
+    ]
+}
