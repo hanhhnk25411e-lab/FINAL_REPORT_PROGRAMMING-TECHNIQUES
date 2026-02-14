@@ -1,5 +1,5 @@
-from employee_management.models.employee import Employee
-from employee_management.models.employees import Employees
+from models.employee import Employee
+from models.employees import Employees
 
 le=Employees()
 e1=Employee("Nguyễn Văn A","NV001","Male","Doctor","0486394866","3 pets","Active")

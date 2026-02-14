@@ -1,4 +1,4 @@
-from employee_management.models.employees import Employees
+from models.employees import Employees
 
 le=Employees()
 le.import_json("../datasets/employees.json")

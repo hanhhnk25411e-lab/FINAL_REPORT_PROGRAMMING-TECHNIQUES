@@ -1,7 +1,7 @@
 import json
 
-from employee_management.models.employee import Employee
-from employee_management.models.my_collections import MyCollections
+from models.employee import Employee
+from models.my_collections import MyCollections
 
 
 class Employees(MyCollections):

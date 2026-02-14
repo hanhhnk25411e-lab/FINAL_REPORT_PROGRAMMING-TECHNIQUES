@@ -2,11 +2,11 @@ import os
 from functools import partial
 
 from PyQt6.QtWidgets import QPushButton, QMessageBox
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QIcon
 
-from employee_management.models.employee import Employee
-from employee_management.models.employees import Employees
-from employee_management.ui.MainWindow import Ui_MainWindow
+from models.employee import Employee
+from models.employees import Employees
+from ui.MainWindow import Ui_MainWindow
 
 
 class MainWindowEx(Ui_MainWindow):
@@ -18,10 +18,11 @@ class MainWindowEx(Ui_MainWindow):
         font = QFont("Segoe UI Black", 12)
 
         self.lineEditFullName.setFont(font)
+        self.lineEditID.setFont(font)
+        self.lineEditGender.setFont(font)
         self.lineEditRole.setFont(font)
         self.lineEditPhone.setFont(font)
         self.lineEditAssignedPets.setFont(font)
-        self.lineEditShift.setFont(font)
         self.lineEditStatus.setFont(font)
 
         self.display_employees()
@@ -63,11 +64,30 @@ class MainWindowEx(Ui_MainWindow):
                 font-weight: bold;
                 padding: 6px;
                 border-radius: 6px;
+                text-align: left;
             }}
             QPushButton:hover {{
                 background-color: {hover_color};
             }}
         """
+
+    def get_employee_icon(self, emp):
+        base_dir = os.path.dirname(os.path.dirname(__file__))
+        img_dir = os.path.join(base_dir, "images")
+
+        gender = emp.gender.lower()
+        role = emp.role.lower()
+
+        if role == "doctor" and gender == "male":
+            path = os.path.join(img_dir, "male_doctor.png")
+        elif role == "doctor" and gender == "female":
+            path = os.path.join(img_dir, "female_doctor.png")
+        elif role == "caretaker" and gender == "male":
+            path = os.path.join(img_dir, "male_caretaker.png")
+        else:
+            path = os.path.join(img_dir, "female_caretaker.png")
+
+        return QIcon(path)
 
     def display_employees(self):
         self.current_index = None
@@ -81,7 +101,8 @@ class MainWindowEx(Ui_MainWindow):
         self.clearLayout(self.verticalLayoutEmployee)
 
         for idx, emp in enumerate(emps.list):
-            btn = QPushButton(str(emp.full_name))
+            btn = QPushButton(f"{emp.id} - {emp.full_name}")
+            btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
 
             self.verticalLayoutEmployee.addWidget(btn)
@@ -91,10 +112,11 @@ class MainWindowEx(Ui_MainWindow):
         self.current_index = idx
 
         self.lineEditFullName.setText(str(emp.full_name))
+        self.lineEditID.setText(str(emp.id))
+        self.lineEditGender.setText(str(emp.gender))
         self.lineEditRole.setText(str(emp.role))
         self.lineEditPhone.setText(str(emp.phone))
         self.lineEditAssignedPets.setText(str(emp.assigned_pets))
-        self.lineEditShift.setText(str(emp.shift))
         self.lineEditStatus.setText(str(emp.status))
 
     def setupSignalAndSlot(self):
@@ -113,10 +135,11 @@ class MainWindowEx(Ui_MainWindow):
         emp = emps.list[self.current_index]
 
         emp.full_name = self.lineEditFullName.text()
+        emp.id = self.lineEditID.text()
+        emp.gender = self.lineEditGender.text()
         emp.role = self.lineEditRole.text()
         emp.phone = self.lineEditPhone.text()
         emp.assigned_pets = self.lineEditAssignedPets.text()
-        emp.shift = self.lineEditShift.text()
         emp.status = self.lineEditStatus.text()
 
         emps.export_json("../datasets/employees.json")
@@ -130,10 +153,11 @@ class MainWindowEx(Ui_MainWindow):
 
         emp = Employee()
         emp.full_name = self.lineEditFullName.text().strip()
+        emp.id = self.lineEditID.text()
+        emp.gender = self.lineEditGender.text().strip()
         emp.role = self.lineEditRole.text().strip()
         emp.phone = self.lineEditPhone.text().strip()
         emp.assigned_pets = self.lineEditAssignedPets.text().strip()
-        emp.shift = self.lineEditShift.text().strip()
         emp.status = self.lineEditStatus.text().strip()
 
         if emp.full_name == "":
@@ -148,10 +172,11 @@ class MainWindowEx(Ui_MainWindow):
         self.display_employees()
 
         self.lineEditFullName.clear()
+        self.lineEditID.clear()
+        self.lineEditGender.clear()
         self.lineEditRole.clear()
         self.lineEditPhone.clear()
         self.lineEditAssignedPets.clear()
-        self.lineEditShift.clear()
         self.lineEditStatus.clear()
 
     def process_search(self):
@@ -174,15 +199,17 @@ class MainWindowEx(Ui_MainWindow):
         results = [
             emp for emp in emps.list
             if keyword in emp.full_name.lower()
+            or keyword in emp.id.lower()
+            or keyword in emp.gender.lower()
             or keyword in emp.role.lower()
             or keyword in emp.phone.lower()
             or keyword in emp.assigned_pets.lower()
-            or keyword in emp.shift.lower()
             or keyword in emp.status.lower()
         ]
 
         for idx, emp in enumerate(results):
-            btn = QPushButton(str(emp.full_name))
+            btn = QPushButton(f"{emp.id} - {emp.full_name}")
+            btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
 
             self.verticalLayoutEmployee.addWidget(btn)
