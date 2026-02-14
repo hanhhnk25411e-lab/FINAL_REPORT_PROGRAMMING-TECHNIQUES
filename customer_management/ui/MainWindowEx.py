@@ -2,7 +2,7 @@ import json
 import os
 from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem
 from MainWindow import Ui_MainWindow
-from Customer import Customer
+from customer import Customer
 
 
 class MainWindowEx(QMainWindow):
@@ -10,7 +10,8 @@ class MainWindowEx(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+        self.ui.input_search.setText("")
+        self.ui.input_search.setPlaceholderText("Find customer's name, phone number")
         self.file_path = "customers.json"
         self.customers = self.load_data()
         self.display_data(self.customers)
@@ -20,9 +21,13 @@ class MainWindowEx(QMainWindow):
     def load_data(self):
         if not os.path.exists(self.file_path):
             return []
-        with open(self.file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            return [Customer.from_dict(item) for item in data]
+        try:
+            with open(self.file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return [Customer.from_dict(item) for item in data]
+        except Exception as e:
+            print(f"read file error: {e}")
+            return []
 
     def display_data(self, data_list):
         self.ui.table_customers.setRowCount(len(data_list))
@@ -35,6 +40,10 @@ class MainWindowEx(QMainWindow):
 
     def search_customer(self):
         query = self.ui.input_search.text().lower()
+        if not query:
+            self.display_data(self.customers)
+            return
+
         results = [c for c in self.customers if query in c.full_name.lower() or query in c.phone]
         self.display_data(results)
 
