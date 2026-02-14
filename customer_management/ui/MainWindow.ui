@@ -17,8 +17,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>30</x>
+      <y>-90</y>
       <width>1051</width>
       <height>631</height>
      </rect>
@@ -36,14 +36,15 @@
    <widget class="QLineEdit" name="input_search">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>30</y>
-      <width>401</width>
-      <height>71</height>
+      <x>80</x>
+      <y>130</y>
+      <width>291</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;</string>
+     <string notr="true">font: 87 12pt &quot;Segoe UI Black&quot;;
+font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
      <string>Find customer's name, phone number</string>
@@ -53,9 +54,9 @@
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>40</y>
-      <width>261</width>
-      <height>61</height>
+      <y>120</y>
+      <width>241</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -71,10 +72,10 @@ color: rgb(255, 255, 255);
    <widget class="QTableWidget" name="table_customers">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>280</y>
-      <width>731</width>
-      <height>261</height>
+      <x>190</x>
+      <y>260</y>
+      <width>681</width>
+      <height>341</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -183,6 +184,30 @@ background-color: rgb(194, 216, 177);</string>
      </property>
     </item>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>981</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../images/customer_management.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>input_search</zorder>
+   <zorder>btn_add</zorder>
+   <zorder>table_customers</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
