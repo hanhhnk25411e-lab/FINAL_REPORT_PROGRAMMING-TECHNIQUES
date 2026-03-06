@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import QMainWindow
 
-from uiBIAWEB.BIAWEB import Ui_MainWindow
-from uiSignIn.SigninEx import SignInEx
+from ui.SignIn.SigninMainWindownEx import SignInMainWindownEx
+from ui.WebPage.WebPageMainWindown import Ui_MainWindow
 
 
-class BIAWEBEx(Ui_MainWindow):
+class WebPageMainWindownEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
@@ -18,7 +18,7 @@ class BIAWEBEx(Ui_MainWindow):
 
     def openSignInWindow(self):
         self.login_window = QMainWindow()
-        self.login_ui = SignInEx()
+        self.login_ui = SignInMainWindownEx()
         self.login_ui.setupUi(self.login_window)
         self.login_ui.showWindow()
         self.MainWindow.close()

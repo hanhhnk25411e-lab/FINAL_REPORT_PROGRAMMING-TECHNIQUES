@@ -1,9 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
-
-from uiBIAWEB.BIAWEBEx import BIAWEBEx
+from ui.WebPage.WebPageMainWindownEx import WebPageMainWindownEx
 
 app=QApplication([])
-gui=BIAWEBEx()
+gui=WebPageMainWindownEx()
 gui.setupUi(QMainWindow())
 gui.showWindow()
 app.exec()

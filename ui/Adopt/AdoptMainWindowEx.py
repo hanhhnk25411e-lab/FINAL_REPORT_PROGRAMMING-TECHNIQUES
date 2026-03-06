@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import QMessageBox, QButtonGroup
 from FileFactory import FileFactory
-from MainWindow import Ui_MainWindow
 from models.signin import Signup
+from ui.Adopt.AdoptMainWindow import Ui_MainWindow
 
 
-class MainWindowEx(Ui_MainWindow):
+class AdoptMainWindowEx(Ui_MainWindow):
 
     def __init__(self):
         self.fileFactory = FileFactory()
