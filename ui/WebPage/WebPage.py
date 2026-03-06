@@ -1,4 +1,4 @@
-# Form implementation generated from reading ManagementSystem file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\uiBIAWEB\BIAWEB.ManagementSystem'
+# Form implementation generated from reading ManagementSystem file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\WebPage\BIAWEB.ManagementSystem'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -22,7 +22,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 401))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Dung_BIAWEB\\uiBIAWEB\\../image/Bia.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Dung_BIAWEB\\uiBIAWEB\\../image/webpage.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.pushButtonSignIn = QtWidgets.QPushButton(parent=self.centralwidget)

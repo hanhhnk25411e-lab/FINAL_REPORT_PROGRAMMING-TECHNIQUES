@@ -1,4 +1,4 @@
-# Form implementation generated from reading ManagementSystem file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\uiSignIn\Signin.ManagementSystem'
+# Form implementation generated from reading ui file 'D:\de Uni [UEL]\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\ui\SignIn\SignInMainWindown.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 401))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Dung_BIAWEB\\uiSignIn\\../image/SignIn.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni [UEL]\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\SignIn\\../image/SignIn.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
@@ -33,21 +33,41 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName("groupBox")
         self.lineEditEmail = QtWidgets.QLineEdit(parent=self.groupBox)
         self.lineEditEmail.setGeometry(QtCore.QRect(20, 10, 301, 41))
+        font = QtGui.QFont()
+        font.setFamily("Century Schoolbook")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.lineEditEmail.setFont(font)
         self.lineEditEmail.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"font: 14pt \"Century Schoolbook\";\n"
 "color: rgb(208, 208, 208);\n"
 "")
         self.lineEditEmail.setObjectName("lineEditEmail")
         self.lineEditPassword = QtWidgets.QLineEdit(parent=self.groupBox)
         self.lineEditPassword.setGeometry(QtCore.QRect(20, 60, 301, 41))
+        font = QtGui.QFont()
+        font.setFamily("Century Schoolbook")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.lineEditPassword.setFont(font)
         self.lineEditPassword.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 75 14pt \"MS Shell Dlg 2\";\n"
+"font: 14pt \"Century Schoolbook\";\n"
 "color: rgb(208, 208, 208);")
         self.lineEditPassword.setObjectName("lineEditPassword")
         self.pushButtonSignIn = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSignIn.setGeometry(QtCore.QRect(90, 120, 171, 41))
+        self.pushButtonSignIn.setGeometry(QtCore.QRect(120, 120, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Cascadia Code Light")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.pushButtonSignIn.setFont(font)
         self.pushButtonSignIn.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 81 20pt \"Rockwell Extra Bold\";\n"
 "color: rgb(255, 239, 114);")
         self.pushButtonSignIn.setObjectName("pushButtonSignIn")
         self.pushButtonForgetPass = QtWidgets.QPushButton(parent=self.groupBox)

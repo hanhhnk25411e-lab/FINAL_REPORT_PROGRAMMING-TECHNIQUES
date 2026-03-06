@@ -1,11 +1,9 @@
 import json
-from PyQt6.QtWidgets import QMainWindow, QMessageBox
-
-from Forget_Password.Pass import Ui_MainWindow
-
+from PyQt6.QtWidgets import  QMessageBox
+from ui.ForgetPassword.ForgertPassWordMainWindow import Ui_MainWindow
 
 
-class PassEx(Ui_MainWindow):
+class ForgertPassWordMainWindowEx(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow

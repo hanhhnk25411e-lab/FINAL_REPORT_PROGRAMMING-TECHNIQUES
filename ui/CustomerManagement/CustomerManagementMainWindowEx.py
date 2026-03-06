@@ -10,13 +10,13 @@ class CustomerManagementMainWindowEx(Ui_MainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.input_search.setText("")
-        self.ui.input_search.setPlaceholderText("Find customer's name, phone number")
+        self.ui.lineEditSearch.setText("")
+        self.ui.lineEditSearch.setPlaceholderText("Find customer's name, phone number")
         self.file_path = "customers.json"
         self.customers = self.load_data()
         self.display_data(self.customers)
-        self.ui.input_search.textChanged.connect(self.search_customer)
-        self.ui.btn_add.clicked.connect(self.add_customer)
+        self.ui.lineEditSearch.textChanged.connect(self.search_customer)
+        self.ui.pushButtonAdd.clicked.connect(self.add_customer)
 
     def load_data(self):
         if not os.path.exists(self.file_path):
@@ -30,16 +30,16 @@ class CustomerManagementMainWindowEx(Ui_MainWindow):
             return []
 
     def display_data(self, data_list):
-        self.ui.table_customers.setRowCount(len(data_list))
+        self.ui.tableWidgetCustomer.setRowCount(len(data_list))
         for row, c in enumerate(data_list):
-            self.ui.table_customers.setItem(row, 0, QTableWidgetItem(c.full_name))
-            self.ui.table_customers.setItem(row, 1, QTableWidgetItem(c.pet))
-            self.ui.table_customers.setItem(row, 2, QTableWidgetItem(c.phone))
-            self.ui.table_customers.setItem(row, 3, QTableWidgetItem(c.service))
-            self.ui.table_customers.setItem(row, 4, QTableWidgetItem(c.status))
+            self.ui.tableWidgetCustomer.setItem(row, 0, QTableWidgetItem(c.full_name))
+            self.ui.tableWidgetCustomer.setItem(row, 1, QTableWidgetItem(c.pet))
+            self.ui.tableWidgetCustomer.setItem(row, 2, QTableWidgetItem(c.phone))
+            self.ui.tableWidgetCustomer.setItem(row, 3, QTableWidgetItem(c.service))
+            self.ui.tableWidgetCustomer.setItem(row, 4, QTableWidgetItem(c.status))
 
     def search_customer(self):
-        query = self.ui.input_search.text().lower()
+        query = self.ui.lineEditSearch.text().lower()
         if not query:
             self.display_data(self.customers)
             return

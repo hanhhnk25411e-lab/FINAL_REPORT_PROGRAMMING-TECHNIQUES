@@ -58,18 +58,18 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>240</y>
-      <width>161</width>
-      <height>51</height>
+      <y>250</y>
+      <width>151</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Rockwell Extra Bold</family>
-      <pointsize>20</pointsize>
-      <weight>10</weight>
+      <family>Cascadia Code Light</family>
+      <pointsize>25</pointsize>
+      <weight>75</weight>
       <italic>false</italic>
-      <bold>false</bold>
+      <bold>true</bold>
      </font>
     </property>
     <property name="whatsThis">
@@ -77,9 +77,6 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(94, 167, 15);
-font: 81 20pt &quot;Rockwell Extra Bold&quot;;
-
-
 color: rgb(255, 248, 23);</string>
     </property>
     <property name="text">

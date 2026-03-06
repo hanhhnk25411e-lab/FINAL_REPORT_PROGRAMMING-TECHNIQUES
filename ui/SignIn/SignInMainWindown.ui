@@ -39,7 +39,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../image/Forget_Password.png</pixmap>
+     <pixmap>../image/SignIn.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -55,71 +55,99 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(255, 255, 255);
+
+</string>
     </property>
     <property name="title">
      <string/>
     </property>
-    <widget class="QLineEdit" name="lineEditPhone">
+    <widget class="QLineEdit" name="lineEditEmail">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>20</y>
+       <y>10</y>
        <width>301</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Century Schoolbook</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(44, 85, 0);
-font: 75 14pt &quot;MS Shell Dlg 2&quot;;
+font: 14pt &quot;Century Schoolbook&quot;;
 color: rgb(208, 208, 208);
 </string>
      </property>
      <property name="text">
-      <string>  Enter phone number</string>
+      <string>   Email adress or phone number</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEditTracedPassword">
+    <widget class="QLineEdit" name="lineEditPassword">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>70</y>
+       <y>60</y>
        <width>301</width>
        <height>41</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Century Schoolbook</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(44, 85, 0);
-font: 75 14pt &quot;MS Shell Dlg 2&quot;;
-color: rgb(208, 208, 208);
-</string>
+font: 14pt &quot;Century Schoolbook&quot;;
+color: rgb(208, 208, 208);</string>
      </property>
      <property name="text">
-      <string>   Your Password</string>
+      <string>   Password</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonTracePassword">
+    <widget class="QPushButton" name="pushButtonSignIn">
      <property name="geometry">
       <rect>
-       <x>60</x>
+       <x>120</x>
        <y>120</y>
-       <width>221</width>
-       <height>41</height>
+       <width>121</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Cascadia Code Light</family>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(44, 85, 0);
-font: 81 20pt &quot;Rockwell Extra Bold&quot;;
 color: rgb(255, 239, 114);</string>
      </property>
      <property name="text">
-      <string>Trace Password</string>
+      <string>Sign In</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButtonContinueSignIn">
+    <widget class="QPushButton" name="pushButtonForgetPass">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>120</x>
        <y>170</y>
        <width>121</width>
        <height>20</height>
@@ -141,7 +169,7 @@ QPushButton:hover {
 }</string>
      </property>
      <property name="text">
-      <string>Continue Sign In</string>
+      <string>Forget Password?</string>
      </property>
     </widget>
    </widget>

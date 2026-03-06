@@ -16,8 +16,8 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         self.lineEditID.setFont(font)
         self.lineEditGender.setFont(font)
         self.lineEditRole.setFont(font)
-        self.lineEditPhone.setFont(font)
-        self.lineEditAssignedPets.setFont(font)
+        self.lineEditPhoneNumber.setFont(font)
+        self.lineEditAssignedPet.setFont(font)
         self.lineEditStatus.setFont(font)
         self.display_employees()
         self.setupSignalAndSlot()
@@ -85,12 +85,12 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         json_path = os.path.join(base_dir, "datasets", "employees.json")
         emps = Employees()
         emps.import_json(json_path)
-        self.clearLayout(self.verticalLayoutEmployee)
+        self.clearLayout(self.verticalLayoutEmployees)
         for idx, emp in enumerate(emps.list):
             btn = QPushButton(f"{emp.id} - {emp.full_name}")
             btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
-            self.verticalLayoutEmployee.addWidget(btn)
+            self.verticalLayoutEmployees.addWidget(btn)
             btn.clicked.connect(partial(self.view_detail, emp, idx))
 
     def view_detail(self, emp, idx):
@@ -99,14 +99,14 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         self.lineEditID.setText(str(emp.id))
         self.lineEditGender.setText(str(emp.gender))
         self.lineEditRole.setText(str(emp.role))
-        self.lineEditPhone.setText(str(emp.phone))
-        self.lineEditAssignedPets.setText(str(emp.assigned_pets))
+        self.lineEditPhoneNumber.setText(str(emp.phone))
+        self.lineEditAssignedPet.setText(str(emp.assigned_pets))
         self.lineEditStatus.setText(str(emp.status))
 
     def setupSignalAndSlot(self):
         self.pushButtonUpdate.clicked.connect(self.process_update)
         self.pushButtonAdd.clicked.connect(self.process_add)
-        self.lineEditEnter.returnPressed.connect(self.process_search)
+        self.lineEditSearch.returnPressed.connect(self.process_search)
 
     def process_update(self):
         if self.current_index is None:
@@ -119,8 +119,8 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         emp.id = self.lineEditID.text()
         emp.gender = self.lineEditGender.text()
         emp.role = self.lineEditRole.text()
-        emp.phone = self.lineEditPhone.text()
-        emp.assigned_pets = self.lineEditAssignedPets.text()
+        emp.phone = self.lineEditPhoneNumber.text()
+        emp.assigned_pets = self.lineEditAssignedPet.text()
         emp.status = self.lineEditStatus.text()
         emps.export_json("../datasets/employees.json")
         QMessageBox.information(self.MainWindow, "Success", "Update data successful!")
@@ -134,8 +134,8 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         emp.id = self.lineEditID.text()
         emp.gender = self.lineEditGender.text().strip()
         emp.role = self.lineEditRole.text().strip()
-        emp.phone = self.lineEditPhone.text().strip()
-        emp.assigned_pets = self.lineEditAssignedPets.text().strip()
+        emp.phone = self.lineEditPhoneNumber.text().strip()
+        emp.assigned_pets = self.lineEditAssignedPet.text().strip()
         emp.status = self.lineEditStatus.text().strip()
 
         if emp.full_name == "":
@@ -149,8 +149,8 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         self.lineEditID.clear()
         self.lineEditGender.clear()
         self.lineEditRole.clear()
-        self.lineEditPhone.clear()
-        self.lineEditAssignedPets.clear()
+        self.lineEditPhoneNumber.clear()
+        self.lineEditAssignedPet.clear()
         self.lineEditStatus.clear()
 
     def process_search(self):
@@ -159,8 +159,8 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         json_path = os.path.join(base_dir, "datasets", "employees.json")
         emps = Employees()
         emps.import_json(json_path)
-        keyword = self.lineEditEnter.text().strip().lower()
-        self.clearLayout(self.verticalLayoutEmployee)
+        keyword = self.lineEditSearch.text().strip().lower()
+        self.clearLayout(self.verticalLayoutEmployees)
         if keyword == "":
             self.display_employees()
             return
@@ -178,5 +178,5 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
             btn = QPushButton(f"{emp.id} - {emp.full_name}")
             btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
-            self.verticalLayoutEmployee.addWidget(btn)
+            self.verticalLayoutEmployees.addWidget(btn)
             btn.clicked.connect(partial(self.view_detail, emp, idx))
