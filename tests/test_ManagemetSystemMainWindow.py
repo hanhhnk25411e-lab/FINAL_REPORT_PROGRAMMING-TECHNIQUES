@@ -1,9 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
-
-from management_system.ui.ManagementSystemEx import ManagementSystemEx
+from ui.ManagementSystem.ManagementSystemMainWindowEx import ManagementSystemMainWindowEx
 
 app=QApplication([])
-gui=ManagementSystemEx()
+gui=ManagementSystemMainWindowEx
 gui.setupUi(QMainWindow())
 gui.MainWindow.show()
 app.exec()

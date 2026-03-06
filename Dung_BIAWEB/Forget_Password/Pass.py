@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\Forget_Password\Pass.ui'
+# Form implementation generated from reading ManagementSystem file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\Forget_Password\Pass.ManagementSystem'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #

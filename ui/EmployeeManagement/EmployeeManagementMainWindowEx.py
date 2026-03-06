@@ -1,22 +1,17 @@
 import os
 from functools import partial
-
 from PyQt6.QtWidgets import QPushButton, QMessageBox
 from PyQt6.QtGui import QFont, QIcon
-
 from models.employee import Employee
 from models.employees import Employees
-from ui.MainWindow import Ui_MainWindow
+from ui.EmployeeManagement.EmployeeManagementMainWindow import Ui_MainWindow
 
-
-class MainWindowEx(Ui_MainWindow):
+class EmployeeManagementMainWindowEx(Ui_MainWindow):
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
-
         font = QFont("Segoe UI Black", 12)
-
         self.lineEditFullName.setFont(font)
         self.lineEditID.setFont(font)
         self.lineEditGender.setFont(font)
@@ -24,7 +19,6 @@ class MainWindowEx(Ui_MainWindow):
         self.lineEditPhone.setFont(font)
         self.lineEditAssignedPets.setFont(font)
         self.lineEditStatus.setFont(font)
-
         self.display_employees()
         self.setupSignalAndSlot()
 
@@ -55,7 +49,6 @@ class MainWindowEx(Ui_MainWindow):
         else:
             bg_color = "rgb(123, 177, 95)"
             hover_color = "rgb(150, 205, 120)"
-
         return f"""
             QPushButton {{
                 background-color: {bg_color};
@@ -74,10 +67,8 @@ class MainWindowEx(Ui_MainWindow):
     def get_employee_icon(self, emp):
         base_dir = os.path.dirname(os.path.dirname(__file__))
         img_dir = os.path.join(base_dir, "images")
-
         gender = emp.gender.lower()
         role = emp.role.lower()
-
         if role == "doctor" and gender == "male":
             path = os.path.join(img_dir, "male_doctor.png")
         elif role == "doctor" and gender == "female":
@@ -86,31 +77,24 @@ class MainWindowEx(Ui_MainWindow):
             path = os.path.join(img_dir, "male_caretaker.png")
         else:
             path = os.path.join(img_dir, "female_caretaker.png")
-
         return QIcon(path)
 
     def display_employees(self):
         self.current_index = None
-
         base_dir = os.path.dirname(os.path.dirname(__file__))
         json_path = os.path.join(base_dir, "datasets", "employees.json")
-
         emps = Employees()
         emps.import_json(json_path)
-
         self.clearLayout(self.verticalLayoutEmployee)
-
         for idx, emp in enumerate(emps.list):
             btn = QPushButton(f"{emp.id} - {emp.full_name}")
             btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
-
             self.verticalLayoutEmployee.addWidget(btn)
             btn.clicked.connect(partial(self.view_detail, emp, idx))
 
     def view_detail(self, emp, idx):
         self.current_index = idx
-
         self.lineEditFullName.setText(str(emp.full_name))
         self.lineEditID.setText(str(emp.id))
         self.lineEditGender.setText(str(emp.gender))
@@ -128,12 +112,9 @@ class MainWindowEx(Ui_MainWindow):
         if self.current_index is None:
             QMessageBox.warning(self.MainWindow, "Warning", "Please select an employee first!")
             return
-
         emps = Employees()
         emps.import_json("../datasets/employees.json")
-
         emp = emps.list[self.current_index]
-
         emp.full_name = self.lineEditFullName.text()
         emp.id = self.lineEditID.text()
         emp.gender = self.lineEditGender.text()
@@ -141,16 +122,13 @@ class MainWindowEx(Ui_MainWindow):
         emp.phone = self.lineEditPhone.text()
         emp.assigned_pets = self.lineEditAssignedPets.text()
         emp.status = self.lineEditStatus.text()
-
         emps.export_json("../datasets/employees.json")
-
         QMessageBox.information(self.MainWindow, "Success", "Update data successful!")
         self.display_employees()
 
     def process_add(self):
         emps = Employees()
         emps.import_json("../datasets/employees.json")
-
         emp = Employee()
         emp.full_name = self.lineEditFullName.text().strip()
         emp.id = self.lineEditID.text()
@@ -163,14 +141,10 @@ class MainWindowEx(Ui_MainWindow):
         if emp.full_name == "":
             QMessageBox.warning(self.MainWindow, "Warning", "Full name is required!")
             return
-
         emps.list.append(emp)
         emps.export_json("../datasets/employees.json")
-
         QMessageBox.information(self.MainWindow, "Success", "Add new employee successful!")
-
         self.display_employees()
-
         self.lineEditFullName.clear()
         self.lineEditID.clear()
         self.lineEditGender.clear()
@@ -181,21 +155,15 @@ class MainWindowEx(Ui_MainWindow):
 
     def process_search(self):
         self.current_index = None
-
         base_dir = os.path.dirname(os.path.dirname(__file__))
         json_path = os.path.join(base_dir, "datasets", "employees.json")
-
         emps = Employees()
         emps.import_json(json_path)
-
         keyword = self.lineEditEnter.text().strip().lower()
-
         self.clearLayout(self.verticalLayoutEmployee)
-
         if keyword == "":
             self.display_employees()
             return
-
         results = [
             emp for emp in emps.list
             if keyword in emp.full_name.lower()
@@ -206,11 +174,9 @@ class MainWindowEx(Ui_MainWindow):
             or keyword in emp.assigned_pets.lower()
             or keyword in emp.status.lower()
         ]
-
         for idx, emp in enumerate(results):
             btn = QPushButton(f"{emp.id} - {emp.full_name}")
             btn.setIcon(self.get_employee_icon(emp))
             btn.setStyleSheet(self.get_button_style(emp))
-
             self.verticalLayoutEmployee.addWidget(btn)
             btn.clicked.connect(partial(self.view_detail, emp, idx))

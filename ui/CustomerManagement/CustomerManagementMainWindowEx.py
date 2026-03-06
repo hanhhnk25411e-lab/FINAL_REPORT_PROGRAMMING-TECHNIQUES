@@ -1,11 +1,11 @@
 import json
 import os
-from PyQt6.QtWidgets import QMainWindow, QTableWidgetItem
-from MainWindow import Ui_MainWindow
-from customer import Customer
+from PyQt6.QtWidgets import QTableWidgetItem
+from CustomerManagementMainWindow import Ui_MainWindow
+from models.customer import Customer
 
 
-class MainWindowEx(QMainWindow):
+class CustomerManagementMainWindowEx(Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()

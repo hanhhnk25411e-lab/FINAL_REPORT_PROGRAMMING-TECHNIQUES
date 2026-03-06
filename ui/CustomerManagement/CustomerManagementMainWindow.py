@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\UEL\FINAL_REPORT_PROGRAMMING-TECHNIQUES\customer_management\ui\MainWindow.ui'
+# Form implementation generated from reading ManagementSystem file 'D:\UEL\FINAL_REPORT_PROGRAMMING-TECHNIQUES\customer_management\ManagementSystem\MainWindow.ManagementSystem'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, -90, 1051, 631))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\UEL\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\customer_management\\ui\\../images/customer.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\UEL\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\customer_management\\ManagementSystem\\../images/customer.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.input_search = QtWidgets.QLineEdit(parent=self.centralwidget)
@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(30, 30, 981, 631))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("D:\\UEL\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\customer_management\\ui\\../images/customer_management.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("D:\\UEL\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\customer_management\\ManagementSystem\\../images/customer_management.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_2.raise_()

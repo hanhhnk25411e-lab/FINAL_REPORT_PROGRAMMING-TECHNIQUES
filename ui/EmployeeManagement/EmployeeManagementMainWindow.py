@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/ui/MainWindow.ui'
+# Form implementation generated from reading ui file 'D:\de Uni [UEL]\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\ui\EmployeeManagement\EmployeeManagementMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 341))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("/Users/uyennhi/Documents/HK2_25_26/Ky_thuat_lap_trinh/FINAL_REPORT/FINAL_REPORT_PROGRAMMING-TECHNIQUES/employee_management/ui/../images/employees_management.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni [UEL]\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\EmployeeManagement\\../images/employees_management.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.lineEditEnter = QtWidgets.QLineEdit(parent=self.centralwidget)
