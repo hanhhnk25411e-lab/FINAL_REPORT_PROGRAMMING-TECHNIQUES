@@ -97,7 +97,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../images/green_background.png</pixmap>
+     <pixmap>../../images/biggreen_background.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -233,25 +233,6 @@ background-color: rgb(31, 58, 22);</string>
     </property>
     <property name="text">
      <string>Gender:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEditRole">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>239</y>
-      <width>251</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Century Schoolbook</family>
-      <pointsize>13</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -524,6 +505,19 @@ background-color: rgb(31, 58, 22);</string>
      <string>Female</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>240</y>
+      <width>251</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
    <zorder>label_3</zorder>
    <zorder>verticalLayoutWidget</zorder>
    <zorder>lineEditSearch</zorder>
@@ -533,7 +527,6 @@ background-color: rgb(31, 58, 22);</string>
    <zorder>lineEditID</zorder>
    <zorder>label_4</zorder>
    <zorder>label_5</zorder>
-   <zorder>lineEditRole</zorder>
    <zorder>label_6</zorder>
    <zorder>lineEditPhoneNumber</zorder>
    <zorder>label_7</zorder>
@@ -546,6 +539,7 @@ background-color: rgb(31, 58, 22);</string>
    <zorder>label_10</zorder>
    <zorder>radioButton</zorder>
    <zorder>radioButton_2</zorder>
+   <zorder>comboBox</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

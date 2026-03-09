@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(10, 90, 671, 271))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("D:\\de Uni [UEL]\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\PetManagement\\../../images/green_background.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("/images/biggreen_background.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)

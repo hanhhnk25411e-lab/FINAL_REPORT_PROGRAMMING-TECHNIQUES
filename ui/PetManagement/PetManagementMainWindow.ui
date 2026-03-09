@@ -81,16 +81,16 @@
    <widget class="QPushButton" name="pushButtonUpdate">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>410</x>
       <y>50</y>
-      <width>151</width>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Cascadia Code Light</family>
-      <pointsize>13</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -106,16 +106,16 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="pushButtonAdd">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>580</x>
       <y>50</y>
-      <width>121</width>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Cascadia Code Light</family>
-      <pointsize>13</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -133,7 +133,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>671</width>
+      <width>681</width>
       <height>271</height>
      </rect>
     </property>
@@ -300,16 +300,16 @@ background-color: rgb(31, 58, 22);</string>
    <widget class="QPushButton" name="pushButtonMoreDetails">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>540</x>
       <y>320</y>
-      <width>141</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Cascadia Code Light</family>
-      <pointsize>13</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -327,7 +327,7 @@ background-color: rgb(255, 255, 255);</string>
      <rect>
       <x>420</x>
       <y>260</y>
-      <width>241</width>
+      <width>261</width>
       <height>20</height>
      </rect>
     </property>
@@ -346,7 +346,7 @@ background-color: rgb(255, 255, 255);</string>
      <rect>
       <x>420</x>
       <y>230</y>
-      <width>241</width>
+      <width>261</width>
       <height>22</height>
      </rect>
     </property>
@@ -434,7 +434,7 @@ background-color: rgb(31, 58, 22);</string>
      <rect>
       <x>420</x>
       <y>170</y>
-      <width>241</width>
+      <width>261</width>
       <height>20</height>
      </rect>
     </property>
@@ -497,7 +497,7 @@ background-color: rgb(31, 58, 22);</string>
      <rect>
       <x>570</x>
       <y>140</y>
-      <width>91</width>
+      <width>111</width>
       <height>20</height>
      </rect>
     </property>
