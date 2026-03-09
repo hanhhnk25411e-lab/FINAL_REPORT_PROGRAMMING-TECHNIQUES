@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.BtnSignUp = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.BtnSignUp.setGeometry(QtCore.QRect(390, 10, 301, 21))
+        self.BtnSignUp.setGeometry(QtCore.QRect(370, 10, 321, 21))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
