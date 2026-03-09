@@ -1,9 +1,8 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
-
-from Forget_Password.PassEx import PassEx
+from ui.ForgetPassword.ForgertPassWordMainWindowEx import ForgertPassWordMainWindowEx
 
 app=QApplication([])
-gui=PassEx()
+gui=ForgertPassWordMainWindowEx()
 gui.setupUi(QMainWindow())
 gui.showWindow()
 app.exec()
