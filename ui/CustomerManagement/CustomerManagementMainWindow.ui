@@ -29,7 +29,7 @@
       <x>10</x>
       <y>10</y>
       <width>681</width>
-      <height>51</height>
+      <height>31</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -56,38 +56,19 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>681</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>C:/Users/admin/OneDrive/Downloads/hi (1).png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButtonAdd">
     <property name="geometry">
      <rect>
-      <x>515</x>
-      <y>69</y>
-      <width>161</width>
+      <x>530</x>
+      <y>60</y>
+      <width>141</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Cascadia Code Light</family>
-      <pointsize>15</pointsize>
+      <pointsize>13</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -104,7 +85,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>69</y>
+      <y>60</y>
       <width>191</width>
       <height>31</height>
      </rect>
@@ -142,9 +123,9 @@ color: rgb(153, 153, 153);</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>121</y>
-      <width>651</width>
-      <height>231</height>
+      <y>110</y>
+      <width>641</width>
+      <height>241</height>
      </rect>
     </property>
     <property name="font">
@@ -274,6 +255,30 @@ color: rgb(0, 0, 0);</string>
      </property>
     </item>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>99</y>
+      <width>671</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../images/green_background.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>horizontalLayoutWidget</zorder>
+   <zorder>pushButtonAdd</zorder>
+   <zorder>lineEditSearch</zorder>
+   <zorder>tableWidgetCustomer</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
