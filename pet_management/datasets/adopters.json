@@ -1,0 +1,404 @@
+{
+    "adopters": [
+        {
+            "pet_id": "P001",
+            "full_name": "Thomas Taylor",
+            "id": "A001",
+            "phone": "0499831225",
+            "address": "New York",
+            "adopted_date": "2026-06-27"
+        },
+        {
+            "pet_id": "P002",
+            "full_name": "David Jackson",
+            "id": "A002",
+            "phone": "0435624043",
+            "address": "Toronto",
+            "adopted_date": "2026-06-07"
+        },
+        {
+            "pet_id": "P005",
+            "full_name": "David Martin",
+            "id": "A003",
+            "phone": "0914539394",
+            "address": "Toronto",
+            "adopted_date": "2024-08-18"
+        },
+        {
+            "pet_id": "P008",
+            "full_name": "Michael Thompson",
+            "id": "A004",
+            "phone": "0708930424",
+            "address": "London",
+            "adopted_date": "2026-12-06"
+        },
+        {
+            "pet_id": "P009",
+            "full_name": "Paul Taylor",
+            "id": "A005",
+            "phone": "0250875764",
+            "address": "Singapore",
+            "adopted_date": "2026-04-18"
+        },
+        {
+            "pet_id": "P011",
+            "full_name": "Paul Brown",
+            "id": "A006",
+            "phone": "0067860510",
+            "address": "Seoul",
+            "adopted_date": "2024-12-10"
+        },
+        {
+            "pet_id": "P012",
+            "full_name": "Charles Johnson",
+            "id": "A007",
+            "phone": "0605890341",
+            "address": "Paris",
+            "adopted_date": "2025-10-08"
+        },
+        {
+            "pet_id": "P013",
+            "full_name": "Mark Wilson",
+            "id": "A008",
+            "phone": "0265367509",
+            "address": "Paris",
+            "adopted_date": "2024-10-12"
+        },
+        {
+            "pet_id": "P015",
+            "full_name": "John Jackson",
+            "id": "A009",
+            "phone": "0191198301",
+            "address": "Singapore",
+            "adopted_date": "2024-04-05"
+        },
+        {
+            "pet_id": "P016",
+            "full_name": "Paul Thompson",
+            "id": "A010",
+            "phone": "0872143176",
+            "address": "Seoul",
+            "adopted_date": "2026-04-02"
+        },
+        {
+            "pet_id": "P017",
+            "full_name": "Joseph Brown",
+            "id": "A011",
+            "phone": "0422085929",
+            "address": "Berlin",
+            "adopted_date": "2025-08-26"
+        },
+        {
+            "pet_id": "P019",
+            "full_name": "Joseph Johnson",
+            "id": "A012",
+            "phone": "0765296817",
+            "address": "Toronto",
+            "adopted_date": "2025-12-28"
+        },
+        {
+            "pet_id": "P021",
+            "full_name": "James Wilson",
+            "id": "A013",
+            "phone": "0945522223",
+            "address": "Berlin",
+            "adopted_date": "2026-05-14"
+        },
+        {
+            "pet_id": "P023",
+            "full_name": "Daniel Taylor",
+            "id": "A014",
+            "phone": "0878475040",
+            "address": "Paris",
+            "adopted_date": "2026-12-20"
+        },
+        {
+            "pet_id": "P024",
+            "full_name": "Mark Johnson",
+            "id": "A015",
+            "phone": "0181797568",
+            "address": "Madrid",
+            "adopted_date": "2025-12-20"
+        },
+        {
+            "pet_id": "P025",
+            "full_name": "Anthony Smith",
+            "id": "A016",
+            "phone": "0130062269",
+            "address": "Sydney",
+            "adopted_date": "2024-02-19"
+        },
+        {
+            "pet_id": "P026",
+            "full_name": "Matthew Wilson",
+            "id": "A017",
+            "phone": "0336301377",
+            "address": "New York",
+            "adopted_date": "2026-06-14"
+        },
+        {
+            "pet_id": "P027",
+            "full_name": "David Thompson",
+            "id": "A018",
+            "phone": "0650188460",
+            "address": "Sydney",
+            "adopted_date": "2025-09-23"
+        },
+        {
+            "pet_id": "P030",
+            "full_name": "Thomas Perez",
+            "id": "A019",
+            "phone": "0187405871",
+            "address": "London",
+            "adopted_date": "2025-11-13"
+        },
+        {
+            "pet_id": "P033",
+            "full_name": "Michael Brown",
+            "id": "A020",
+            "phone": "0251675625",
+            "address": "Berlin",
+            "adopted_date": "2024-03-09"
+        },
+        {
+            "pet_id": "P034",
+            "full_name": "Daniel Johnson",
+            "id": "A021",
+            "phone": "0452659026",
+            "address": "Toronto",
+            "adopted_date": "2025-12-01"
+        },
+        {
+            "pet_id": "P037",
+            "full_name": "Thomas Taylor",
+            "id": "A022",
+            "phone": "0098877189",
+            "address": "Paris",
+            "adopted_date": "2026-02-21"
+        },
+        {
+            "pet_id": "P042",
+            "full_name": "Michael Perez",
+            "id": "A023",
+            "phone": "0914112025",
+            "address": "Toronto",
+            "adopted_date": "2025-05-07"
+        },
+        {
+            "pet_id": "P044",
+            "full_name": "Michael Perez",
+            "id": "A024",
+            "phone": "0228024970",
+            "address": "Berlin",
+            "adopted_date": "2024-03-24"
+        },
+        {
+            "pet_id": "P046",
+            "full_name": "Daniel Wilson",
+            "id": "A025",
+            "phone": "0936028450",
+            "address": "Madrid",
+            "adopted_date": "2025-06-05"
+        },
+        {
+            "pet_id": "P047",
+            "full_name": "Thomas Taylor",
+            "id": "A026",
+            "phone": "0623340416",
+            "address": "Paris",
+            "adopted_date": "2024-10-23"
+        },
+        {
+            "pet_id": "P048",
+            "full_name": "Richard Wilson",
+            "id": "A027",
+            "phone": "0108473123",
+            "address": "London",
+            "adopted_date": "2024-10-24"
+        },
+        {
+            "pet_id": "P049",
+            "full_name": "James Taylor",
+            "id": "A028",
+            "phone": "0983013090",
+            "address": "Seoul",
+            "adopted_date": "2026-02-07"
+        },
+        {
+            "pet_id": "P051",
+            "full_name": "Daniel Perez",
+            "id": "A029",
+            "phone": "0700317573",
+            "address": "New York",
+            "adopted_date": "2026-08-15"
+        },
+        {
+            "pet_id": "P053",
+            "full_name": "Michael Jackson",
+            "id": "A030",
+            "phone": "0686354665",
+            "address": "London",
+            "adopted_date": "2024-09-10"
+        },
+        {
+            "pet_id": "P054",
+            "full_name": "David Thompson",
+            "id": "A031",
+            "phone": "0246108295",
+            "address": "Sydney",
+            "adopted_date": "2024-12-03"
+        },
+        {
+            "pet_id": "P056",
+            "full_name": "John Taylor",
+            "id": "A032",
+            "phone": "0249660496",
+            "address": "Paris",
+            "adopted_date": "2024-08-08"
+        },
+        {
+            "pet_id": "P057",
+            "full_name": "William Thompson",
+            "id": "A033",
+            "phone": "0770534133",
+            "address": "Singapore",
+            "adopted_date": "2026-04-02"
+        },
+        {
+            "pet_id": "P059",
+            "full_name": "Mark Johnson",
+            "id": "A034",
+            "phone": "0884758921",
+            "address": "Seoul",
+            "adopted_date": "2024-10-24"
+        },
+        {
+            "pet_id": "P060",
+            "full_name": "James Smith",
+            "id": "A035",
+            "phone": "0131582136",
+            "address": "Madrid",
+            "adopted_date": "2024-01-22"
+        },
+        {
+            "pet_id": "P062",
+            "full_name": "David Moore",
+            "id": "A036",
+            "phone": "0133297030",
+            "address": "Toronto",
+            "adopted_date": "2024-11-12"
+        },
+        {
+            "pet_id": "P064",
+            "full_name": "Matthew Lee",
+            "id": "A037",
+            "phone": "0257566475",
+            "address": "New York",
+            "adopted_date": "2025-11-20"
+        },
+        {
+            "pet_id": "P066",
+            "full_name": "David Brown",
+            "id": "A038",
+            "phone": "0662892909",
+            "address": "Berlin",
+            "adopted_date": "2026-12-20"
+        },
+        {
+            "pet_id": "P067",
+            "full_name": "Matthew Brown",
+            "id": "A039",
+            "phone": "0644812850",
+            "address": "Singapore",
+            "adopted_date": "2025-05-17"
+        },
+        {
+            "pet_id": "P077",
+            "full_name": "Thomas Taylor",
+            "id": "A040",
+            "phone": "0607303957",
+            "address": "Tokyo",
+            "adopted_date": "2026-03-10"
+        },
+        {
+            "pet_id": "P078",
+            "full_name": "James Johnson",
+            "id": "A041",
+            "phone": "0910365176",
+            "address": "New York",
+            "adopted_date": "2024-08-10"
+        },
+        {
+            "pet_id": "P079",
+            "full_name": "David Smith",
+            "id": "A042",
+            "phone": "0688466956",
+            "address": "Paris",
+            "adopted_date": "2025-10-20"
+        },
+        {
+            "pet_id": "P084",
+            "full_name": "Daniel Jackson",
+            "id": "A043",
+            "phone": "0050570992",
+            "address": "Toronto",
+            "adopted_date": "2025-09-03"
+        },
+        {
+            "pet_id": "P085",
+            "full_name": "William Johnson",
+            "id": "A044",
+            "phone": "0066121420",
+            "address": "Seoul",
+            "adopted_date": "2025-11-18"
+        },
+        {
+            "pet_id": "P086",
+            "full_name": "Robert Taylor",
+            "id": "A045",
+            "phone": "0970963523",
+            "address": "Seoul",
+            "adopted_date": "2025-10-17"
+        },
+        {
+            "pet_id": "P087",
+            "full_name": "Joseph Wilson",
+            "id": "A046",
+            "phone": "0940427102",
+            "address": "Seoul",
+            "adopted_date": "2025-07-09"
+        },
+        {
+            "pet_id": "P088",
+            "full_name": "David Wilson",
+            "id": "A047",
+            "phone": "0691950485",
+            "address": "Seoul",
+            "adopted_date": "2025-07-09"
+        },
+        {
+            "pet_id": "P089",
+            "full_name": "John Smith",
+            "id": "A048",
+            "phone": "0186801946",
+            "address": "Paris",
+            "adopted_date": "2025-12-24"
+        },
+        {
+            "pet_id": "P090",
+            "full_name": "Daniel Wilson",
+            "id": "A049",
+            "phone": "0390678080",
+            "address": "Madrid",
+            "adopted_date": "2025-10-06"
+        },
+        {
+            "pet_id": "P091",
+            "full_name": "John Moore",
+            "id": "A050",
+            "phone": "0257630377",
+            "address": "London",
+            "adopted_date": "2024-08-07"
+        }
+    ]
+}
