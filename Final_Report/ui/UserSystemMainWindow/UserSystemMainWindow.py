@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Final_Report\ui\UserSystemMainWindow\UserSystemMainWindow.ui'
+# Form implementation generated from reading ui file 'D:\de Uni _UEL\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Final_Report\ui\UserSystemMainWindow\UserSystemMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -22,12 +22,14 @@ class Ui_MainWindow(object):
         self.label.setMinimumSize(QtCore.QSize(700, 400))
         self.label.setMaximumSize(QtCore.QSize(700, 400))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../../image/UserSystem.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni _UEL\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../../image/UserSystem.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.BtnSignUp = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.BtnSignUp.setGeometry(QtCore.QRect(390, 10, 301, 21))
+        self.BtnSignUp.setGeometry(QtCore.QRect(370, 10, 321, 31))
         font = QtGui.QFont()
+        font.setFamily("Cascadia Code Light")
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.BtnSignUp.setFont(font)
@@ -37,7 +39,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(-6, -1, 711, 401))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../image/interface.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap("D:\\de Uni _UEL\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../image/interface.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_2.raise_()

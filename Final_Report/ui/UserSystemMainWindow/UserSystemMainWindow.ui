@@ -60,14 +60,16 @@
    <widget class="QPushButton" name="BtnSignUp">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>370</x>
       <y>10</y>
-      <width>301</width>
-      <height>21</height>
+      <width>321</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Cascadia Code Light</family>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
