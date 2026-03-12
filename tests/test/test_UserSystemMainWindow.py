@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
 
-from Final_Report.ui.UserSystemMainWindow.UserSystemMainWindowEx import MainWindowInterfaceEx
+from ui.UserSystemMainWindow.UserSystemMainWindowEx import MainWindowInterfaceEx
 
 app=QApplication([])
 gui=MainWindowInterfaceEx()

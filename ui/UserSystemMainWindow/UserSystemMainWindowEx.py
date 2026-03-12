@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow
 
 from Final_Report.ui.Adopt.AdoptMainWindowEx import AdoptMainWindowEx
-from Final_Report.ui.UserSystemMainWindow.UserSystemMainWindow import Ui_MainWindow
+from ui.UserSystemMainWindow.UserSystemMainWindow import Ui_MainWindow
 
 
 class UserSystemMainWindowEx(QMainWindow, Ui_MainWindow):
