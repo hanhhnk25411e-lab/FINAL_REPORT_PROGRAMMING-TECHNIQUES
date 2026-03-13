@@ -1,19 +1,45 @@
+import random
+
 from models.employee import Employee
 from models.employees import Employees
 
-le=Employees()
-e1=Employee("Nguyễn Văn A","NV001","Male","Doctor","0486394866","3 pets","Active")
-e2=Employee("Lê Thị B","NV002","Female","Caretaker","0694769442","2 pets","Active")
-e3=Employee("Nguyễn Thị C","NV003","Female","Caretaker","0385743957","4 pets","On leave")
-e4=Employee("Phạm Văn D","NV004","Male","Doctor","0396749657","3 pets","Active")
-e5=Employee("Trương Thị E","NV005","Female","Doctor","0937539672","3 pets","Active")
-e6=Employee("Võ Văn F","NV006","Male","Caretaker","0485837592","4 pets","Acitve")
-e7=Employee("Phạm Thị G","NV007","Female","Doctor","0320574482","2 pets","Active")
-e8=Employee("Dương Văn H","NV008","Male","Doctor","0938672573","3 pets","On leave")
-e9=Employee("Trần Thị I","NV009","Female","Caretaker","0395673957","4 pets","Active")
-e10=Employee("Hồ Văn J","NV010","Male","Caretaker","0395836502","2 pets","Active")
-le.add_items([e1,e2,e3,e4,e5,e6,e7,e8,e9,e10])
-print("List of Employee:")
-le.print_items()
+first_names = [
+    "James","John","Robert","Michael","William","David","Richard","Joseph","Thomas","Charles",
+    "Mary","Patricia","Jennifer","Linda","Elizabeth","Barbara","Susan","Jessica","Sarah","Karen"
+]
+
+last_names = [
+    "Smith","Johnson","Williams","Brown","Jones","Garcia","Miller","Davis","Rodriguez","Martinez",
+    "Hernandez","Lopez","Gonzalez","Wilson","Anderson","Thomas","Taylor","Moore","Jackson","Martin"
+]
+
+roles = ["Doctor", "Caretaker"]
+genders = ["Male", "Female"]
+statuses = ["Active", "On leave"]
+
+employees = Employees()
+employee_list = []
+
+for i in range(1, 101):
+
+    name = random.choice(first_names) + " " + random.choice(last_names)
+    emp_id = f"E{i:03d}"
+    gender = random.choice(genders)
+    role = random.choice(roles)
+
+    phone = "0" + "".join([str(random.randint(0,9)) for _ in range(9)])
+
+    pets = f"{random.randint(1,5)} pets"
+
+    status = random.choice(statuses)
+
+    emp = Employee(name, emp_id, gender, role, phone, pets, status)
+    employee_list.append(emp)
+
+employees.add_items(employee_list)
+
+print("List of Employees:")
+employees.print_items()
+
 print("Export Employees to JSON FILE:")
-le.export_json("../datasets/employees.json")
+employees.export_json("../datasets/employees.json")
