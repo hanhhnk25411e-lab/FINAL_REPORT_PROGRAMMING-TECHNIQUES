@@ -72,7 +72,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
     </property>
     <property name="placeholderText">
      <string>Enter pet's information</string>
@@ -81,18 +82,18 @@
    <widget class="QPushButton" name="pushButtonUpdate">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>420</x>
       <y>50</y>
-      <width>141</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Cascadia Code Light</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -114,10 +115,10 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="font">
      <font>
-      <family>Cascadia Code Light</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -300,18 +301,18 @@ background-color: rgb(31, 58, 22);</string>
    <widget class="QPushButton" name="pushButtonMoreDetails">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>550</x>
       <y>320</y>
-      <width>131</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Cascadia Code Light</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -338,7 +339,8 @@ background-color: rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
     </property>
    </widget>
    <widget class="QDateEdit" name="dateEdit">
@@ -357,7 +359,9 @@ background-color: rgb(255, 255, 255);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioButtonMale">
@@ -445,7 +449,9 @@ background-color: rgb(31, 58, 22);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditName">
@@ -464,7 +470,11 @@ background-color: rgb(31, 58, 22);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -508,7 +518,9 @@ background-color: rgb(31, 58, 22);</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_12">
@@ -559,30 +571,33 @@ background-color: rgb(31, 58, 22);</string>
      <string>Not adopted</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
+   <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>100</y>
+      <y>90</y>
       <width>271</width>
       <height>251</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayoutPets">
-     <item>
-      <widget class="QListWidget" name="listWidget">
-       <property name="font">
-        <font>
-         <family>Century Schoolbook</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>269</width>
+       <height>249</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutPets"/>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

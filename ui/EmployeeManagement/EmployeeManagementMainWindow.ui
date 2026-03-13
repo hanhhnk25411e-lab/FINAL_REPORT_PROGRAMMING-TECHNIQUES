@@ -44,7 +44,7 @@
        <property name="font">
         <font>
          <family>Kristen ITC</family>
-         <pointsize>27</pointsize>
+         <pointsize>24</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -395,10 +395,10 @@ background-color: rgb(31, 58, 22);</string>
     </property>
     <property name="font">
      <font>
-      <family>Cascadia Code Light</family>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -412,18 +412,18 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="pushButtonUpdate">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>400</x>
       <y>60</y>
-      <width>151</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Cascadia Code Light</family>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">

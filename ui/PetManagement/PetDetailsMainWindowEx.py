@@ -1,20 +1,14 @@
 from PyQt6.QtWidgets import QTableWidgetItem, QMessageBox
 from PyQt6.QtCore import QDate
 from PyQt6.QtGui import QColor
-
 from models.rescue_cases import RescueCases
 from models.rescue_case import RescueCase
-
 from models.medical_records import MedicalRecords
 from models.medical_record import MedicalRecord
-
 from models.adopters import Adopters
 from models.adopter import Adopter
-
 from models.pets import Pets
-
-from ui.PetDetailsMainWindow import Ui_MainWindow
-
+from ui.PetManagement.PetDetailsMainWindow import Ui_MainWindow
 
 class PetDetailsMainWindowEx(Ui_MainWindow):
 

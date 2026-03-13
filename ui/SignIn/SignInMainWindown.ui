@@ -121,19 +121,19 @@ color: rgb(208, 208, 208);</string>
     <widget class="QPushButton" name="pushButtonSignIn">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>120</y>
+       <x>100</x>
+       <y>110</y>
        <width>121</width>
        <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Cascadia Code Light</family>
+       <family>Berlin Sans FB</family>
        <pointsize>18</pointsize>
-       <weight>75</weight>
+       <weight>50</weight>
        <italic>false</italic>
-       <bold>true</bold>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -147,11 +147,18 @@ color: rgb(255, 239, 114);</string>
     <widget class="QPushButton" name="pushButtonForgetPass">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>170</y>
+       <x>100</x>
+       <y>160</y>
        <width>121</width>
-       <height>20</height>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Berlin Sans FB</family>
+       <pointsize>13</pointsize>
+       <underline>true</underline>
+      </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>

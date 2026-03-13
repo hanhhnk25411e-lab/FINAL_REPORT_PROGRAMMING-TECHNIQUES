@@ -106,10 +106,10 @@
          </property>
          <property name="font">
           <font>
-           <family>Cascadia Code Light</family>
+           <family>Berlin Sans FB</family>
            <pointsize>17</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
@@ -173,10 +173,10 @@ color: rgb(31, 64, 31);</string>
          </property>
          <property name="font">
           <font>
-           <family>Cascadia Code Light</family>
+           <family>Berlin Sans FB</family>
            <pointsize>17</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">
@@ -248,10 +248,10 @@ background-color: rgb(255, 255, 255);</string>
          </property>
          <property name="font">
           <font>
-           <family>Cascadia Code Light</family>
+           <family>Berlin Sans FB</family>
            <pointsize>17</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <weight>50</weight>
+           <bold>false</bold>
           </font>
          </property>
          <property name="styleSheet">

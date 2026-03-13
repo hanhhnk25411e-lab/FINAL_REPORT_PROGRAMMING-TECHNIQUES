@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\de Uni [UEL]\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\ui\SignIn\SignInMainWindown.ui'
+# Form implementation generated from reading ui file 'D:\de Uni _UEL\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\ui\SignIn\SignInMainWindown.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 401))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni [UEL]\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\SignIn\\../image/SignIn.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni _UEL\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\SignIn\\../image/SignIn.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
@@ -59,19 +59,24 @@ class Ui_MainWindow(object):
 "color: rgb(208, 208, 208);")
         self.lineEditPassword.setObjectName("lineEditPassword")
         self.pushButtonSignIn = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonSignIn.setGeometry(QtCore.QRect(120, 120, 121, 31))
+        self.pushButtonSignIn.setGeometry(QtCore.QRect(100, 110, 121, 31))
         font = QtGui.QFont()
-        font.setFamily("Cascadia Code Light")
+        font.setFamily("Berlin Sans FB")
         font.setPointSize(18)
-        font.setBold(True)
+        font.setBold(False)
         font.setItalic(False)
-        font.setWeight(75)
+        font.setWeight(50)
         self.pushButtonSignIn.setFont(font)
         self.pushButtonSignIn.setStyleSheet("background-color: rgb(44, 85, 0);\n"
 "color: rgb(255, 239, 114);")
         self.pushButtonSignIn.setObjectName("pushButtonSignIn")
         self.pushButtonForgetPass = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonForgetPass.setGeometry(QtCore.QRect(120, 170, 121, 20))
+        self.pushButtonForgetPass.setGeometry(QtCore.QRect(100, 160, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(13)
+        font.setUnderline(True)
+        self.pushButtonForgetPass.setFont(font)
         self.pushButtonForgetPass.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButtonForgetPass.setStyleSheet("\n"
 "QPushButton {\n"

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ManagementSystem file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Dung_BIAWEB\ForgetPassword\Pass.ManagementSystem'
+# Form implementation generated from reading ui file 'D:\de Uni _UEL\HK2\Kỹ thuật lập trình\FINAL_REPORT_PROGRAMMING-TECHNIQUES\ui\ForgetPassword\ForgertPassWordMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 701, 401))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Dung_BIAWEB\\ForgetPassword\\../image/ForgetPassword.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\de Uni _UEL\\HK2\\Kỹ thuật lập trình\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\ui\\ForgetPassword\\../image/Forget_Password.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
@@ -30,26 +30,42 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName("groupBox")
         self.lineEditPhone = QtWidgets.QLineEdit(parent=self.groupBox)
         self.lineEditPhone.setGeometry(QtCore.QRect(20, 20, 301, 41))
+        font = QtGui.QFont()
+        font.setFamily("Century Schoolbook")
+        font.setPointSize(14)
+        self.lineEditPhone.setFont(font)
         self.lineEditPhone.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "color: rgb(208, 208, 208);\n"
 "")
         self.lineEditPhone.setObjectName("lineEditPhone")
         self.lineEditTracedPassword = QtWidgets.QLineEdit(parent=self.groupBox)
-        self.lineEditTracedPassword.setGeometry(QtCore.QRect(20, 70, 301, 41))
+        self.lineEditTracedPassword.setGeometry(QtCore.QRect(20, 110, 301, 41))
+        font = QtGui.QFont()
+        font.setFamily("Century Schoolbook")
+        font.setPointSize(14)
+        self.lineEditTracedPassword.setFont(font)
         self.lineEditTracedPassword.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 75 14pt \"MS Shell Dlg 2\";\n"
 "color: rgb(208, 208, 208);\n"
 "")
         self.lineEditTracedPassword.setObjectName("lineEditTracedPassword")
         self.pushButtonTracePassword = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonTracePassword.setGeometry(QtCore.QRect(60, 120, 221, 41))
+        self.pushButtonTracePassword.setGeometry(QtCore.QRect(100, 70, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setWeight(50)
+        self.pushButtonTracePassword.setFont(font)
         self.pushButtonTracePassword.setStyleSheet("background-color: rgb(44, 85, 0);\n"
-"font: 81 20pt \"Rockwell Extra Bold\";\n"
 "color: rgb(255, 239, 114);")
         self.pushButtonTracePassword.setObjectName("pushButtonTracePassword")
         self.pushButtonContinueSignIn = QtWidgets.QPushButton(parent=self.groupBox)
-        self.pushButtonContinueSignIn.setGeometry(QtCore.QRect(110, 170, 121, 20))
+        self.pushButtonContinueSignIn.setGeometry(QtCore.QRect(110, 160, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(13)
+        font.setUnderline(True)
+        self.pushButtonContinueSignIn.setFont(font)
         self.pushButtonContinueSignIn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.pushButtonContinueSignIn.setStyleSheet("\n"
 "QPushButton {\n"
