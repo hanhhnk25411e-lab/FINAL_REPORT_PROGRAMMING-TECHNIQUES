@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\LaNguyenMyDung_K254111447_K25411E\Python\FINAL_REPORT_PROGRAMMING-TECHNIQUES\Final_Report\ui\UserSystemMainWindow\UserSystemMainWindow.ui'
+# Form implementation generated from reading ui file '/Users/uyennhi/Downloads/FINAL_REPORT_PROGRAMMING-TECHNIQUES/Final_Report/ui/UserSystemMainWindow/UserSystemMainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.9.1
 #
@@ -22,14 +22,17 @@ class Ui_MainWindow(object):
         self.label.setMinimumSize(QtCore.QSize(700, 400))
         self.label.setMaximumSize(QtCore.QSize(700, 400))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../../image/UserSystem.jpg"))
+        self.label.setPixmap(QtGui.QPixmap("/Users/uyennhi/Downloads/FINAL_REPORT_PROGRAMMING-TECHNIQUES/Final_Report/ui/UserSystemMainWindow/../../images/UserSystem.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.BtnSignUp = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.BtnSignUp.setGeometry(QtCore.QRect(370, 10, 321, 21))
+        self.BtnSignUp.setGeometry(QtCore.QRect(370, 10, 321, 31))
         font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.BtnSignUp.setFont(font)
         self.BtnSignUp.setStyleSheet("background-color: rgb(44, 83, 8);\n"
 "color: rgb(238, 228, 90);")
@@ -37,12 +40,25 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(-6, -1, 711, 401))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("D:\\LaNguyenMyDung_K254111447_K25411E\\Python\\FINAL_REPORT_PROGRAMMING-TECHNIQUES\\Final_Report\\ui\\UserSystemMainWindow\\../image/interface.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap("/Users/uyennhi/Downloads/FINAL_REPORT_PROGRAMMING-TECHNIQUES/Final_Report/ui/UserSystemMainWindow/../image/interface.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
+        self.BtnSignUpBack = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.BtnSignUpBack.setGeometry(QtCore.QRect(240, 10, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("Berlin Sans FB")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.BtnSignUpBack.setFont(font)
+        self.BtnSignUpBack.setStyleSheet("background-color: rgb(44, 83, 8);\n"
+"color: rgb(238, 228, 90);")
+        self.BtnSignUpBack.setObjectName("BtnSignUpBack")
         self.label_2.raise_()
         self.label.raise_()
         self.BtnSignUp.raise_()
+        self.BtnSignUpBack.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -52,3 +68,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.BtnSignUp.setText(_translate("MainWindow", "Sign up to adopt a lovely pet RIGHT NOW !!"))
+        self.BtnSignUpBack.setText(_translate("MainWindow", "Back"))

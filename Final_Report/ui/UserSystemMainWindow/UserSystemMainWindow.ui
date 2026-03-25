@@ -51,7 +51,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../image/UserSystem.jpg</pixmap>
+     <pixmap>../../images/UserSystem.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -63,13 +63,16 @@
       <x>370</x>
       <y>10</y>
       <width>321</width>
-      <height>21</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Berlin Sans FB</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -99,9 +102,36 @@ color: rgb(238, 228, 90);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="BtnSignUpBack">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Berlin Sans FB</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(44, 83, 8);
+color: rgb(238, 228, 90);</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
    <zorder>BtnSignUp</zorder>
+   <zorder>BtnSignUpBack</zorder>
   </widget>
  </widget>
  <resources/>
