@@ -926,6 +926,15 @@
             "phone": "0288435892",
             "assigned_pets": "3 pets",
             "status": "Active"
+        },
+        {
+            "full_name": "Karen Martinez",
+            "id": "E104",
+            "gender": "Female",
+            "role": "Doctor",
+            "phone": "0946583741",
+            "assigned_pets": "1 pets",
+            "status": "Active"
         }
     ]
 }

@@ -908,6 +908,15 @@
             "rescue_date": "2026-02-08",
             "health_status": "Recovering",
             "adoption_status": "Not adopted"
+        },
+        {
+            "name": "Luna",
+            "id": "P102",
+            "species": "Dog",
+            "gender": "Male",
+            "rescue_date": "2025-05-22",
+            "health_status": "Healthy",
+            "adoption_status": "Not adopted"
         }
     ]
 }

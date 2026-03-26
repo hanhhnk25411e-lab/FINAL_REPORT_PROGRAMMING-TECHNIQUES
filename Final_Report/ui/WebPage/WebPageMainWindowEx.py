@@ -8,23 +8,20 @@ from Final_Report.ui.SignIn.SignInMainWindowEx import SignInMainWindowEx
 from Final_Report.ui.WebPage.WebPageMainWindow import Ui_MainWindow
 
 
-# ================= RESOURCE PATH =================
 def resource_path(relative_path):
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, relative_path)
 
-    return os.path.join(base_path, relative_path)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
 
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
 
-# ================= CLASS =================
 class WebPageMainWindowEx(QMainWindow):
 
     def __init__(self):
         super().__init__()
 
-        # setup UI
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -36,7 +33,6 @@ class WebPageMainWindowEx(QMainWindow):
         self.login_window = None
         self.login_ui = None
 
-    # ================= UI =================
     def setupUI(self):
         self.setStyleSheet("""
         QPushButton {
@@ -57,11 +53,9 @@ class WebPageMainWindowEx(QMainWindow):
 
         self.ui.pushButtonSignIn.setMinimumHeight(50)
 
-    # ================= SIGNAL =================
     def setupSignalAndSlot(self):
         self.ui.pushButtonSignIn.clicked.connect(self.openSignInWindow)
 
-    # ================= OPEN LOGIN =================
     def openSignInWindow(self):
 
         self.login_window = QMainWindow()

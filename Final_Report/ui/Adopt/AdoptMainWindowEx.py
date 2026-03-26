@@ -1,5 +1,7 @@
 import os
 import sys
+
+from PyQt6.QtCore import QDate, QTime
 from PyQt6.QtWidgets import QMessageBox, QButtonGroup
 
 from Final_Report.models.Signup import Signup
@@ -9,11 +11,35 @@ from Final_Report.ui.Adopt.AdoptMainWindow import Ui_MainWindow
 
 def resource_path(relative_path):
     if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(sys.executable)
+        return os.path.join(sys._MEIPASS, relative_path)
 
-    return os.path.join(base_path, relative_path)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
+
+
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            import json
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump([], f)
+
+    return data_path
 
 
 class AdoptMainWindowEx(Ui_MainWindow):
@@ -22,17 +48,19 @@ class AdoptMainWindowEx(Ui_MainWindow):
         super().__init__()
         self.fileFactory = FileFactory()
         self.arrData = []
-
-        self.file_path = resource_path("Final_Report/datasets/signup.json")
+        self.file_path = ensure_file("signup.json")
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
 
-        self.arrData = self.fileFactory.readData(
-            path=self.file_path,
-            ClassName=Signup
-        )
+        if not os.path.exists(self.file_path):
+            self.arrData = []
+        else:
+            self.arrData = self.fileFactory.readData(
+                path=self.file_path,
+                ClassName=Signup
+            )
 
         self.setupSignalAndSlot()
 
@@ -52,12 +80,12 @@ class AdoptMainWindowEx(Ui_MainWindow):
             border-radius: 6px;
             padding: 6px;
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
         }
 
         QDateEdit, QTimeEdit {
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
             border: 2px solid #2e7d32;
             border-radius: 6px;
             padding: 4px;
@@ -90,7 +118,7 @@ class AdoptMainWindowEx(Ui_MainWindow):
         }
         """)
 
-        self.dateEdit.setStyleSheet("background-color: white; color: black;")
+        self.lineEditFullName.setFocus()
 
     def showWindow(self):
         self.MainWindow.show()
@@ -116,33 +144,9 @@ class AdoptMainWindowEx(Ui_MainWindow):
         msg.setWindowTitle(title)
         msg.setText(text)
         msg.setIcon(icon)
-
-        msg.setStyleSheet("""
-        QMessageBox {
-            background-color: #e8f5e9;
-        }
-
-        QLabel {
-            color: #1b5e20;
-            font-size: 14px;
-        }
-
-        QPushButton {
-            background-color: #2e7d32;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-        }
-
-        QPushButton:hover {
-            background-color: #66bb6a;
-        }
-        """)
-
         msg.exec()
 
     def validateForm(self):
-
         if self.lineEditFullName.text().strip() == "":
             self.showMessage("Error", "Full name required", QMessageBox.Icon.Warning)
             return False
@@ -166,7 +170,7 @@ class AdoptMainWindowEx(Ui_MainWindow):
         return True
 
     def getFormData(self):
-        return Signup(
+        data = Signup(
             self.lineEditFullName.text(),
             self.lineEditPhoneNumber.text(),
             self.lineEditEmail.text(),
@@ -174,20 +178,19 @@ class AdoptMainWindowEx(Ui_MainWindow):
             self.groupOwned.checkedButton().text(),
             self.groupPet.checkedButton().text(),
             self.lineEditReason.text(),
-            self.dateEdit.date().toPyDate(),
+            self.dateEdit.date().toString("yyyy-MM-dd"),
             self.timeEdit.time().toString()
         )
+        data.Status = "Not Yet"
+        return data
 
     def processSignup(self):
-
         if not self.validateForm():
             return
 
-        os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
-
         newSignup = self.getFormData()
 
-        self.arrData.append(newSignup)
+        self.arrData.insert(0, newSignup)
 
         self.fileFactory.writeData(self.file_path, self.arrData)
 
@@ -196,7 +199,6 @@ class AdoptMainWindowEx(Ui_MainWindow):
         self.resetForm()
 
     def resetForm(self):
-
         self.lineEditFullName.clear()
         self.lineEditPhoneNumber.clear()
         self.lineEditEmail.clear()
@@ -208,11 +210,12 @@ class AdoptMainWindowEx(Ui_MainWindow):
                 btn.setChecked(False)
             group.setExclusive(True)
 
+        self.dateEdit.setDate(QDate())
+        self.timeEdit.setTime(QTime())
+
         self.radioButtonCommit.setChecked(False)
 
     def go_back(self):
-
         if hasattr(self, 'previous_window') and self.previous_window:
             self.previous_window.show()
-
         self.MainWindow.close()

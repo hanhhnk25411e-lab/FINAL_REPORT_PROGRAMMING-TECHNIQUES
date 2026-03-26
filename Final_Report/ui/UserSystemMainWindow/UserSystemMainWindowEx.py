@@ -31,8 +31,6 @@ class UserSystemMainWindowEx(QMainWindow, Ui_MainWindow):
         }
         """)
 
-    # =========================
-
     def open_signup(self):
 
         self.signup_window = QMainWindow()
@@ -46,7 +44,6 @@ class UserSystemMainWindowEx(QMainWindow, Ui_MainWindow):
 
         self.hide()
 
-    # =========================
 
     def go_back(self):
 

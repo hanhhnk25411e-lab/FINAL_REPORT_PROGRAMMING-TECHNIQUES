@@ -13,11 +13,32 @@ from Final_Report.ui.EmployeeManagement.EmployeeManagementMainWindow import Ui_M
 
 def resource_path(relative_path):
     if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(sys.executable)
-    return os.path.join(base_path, relative_path)
+        return os.path.join(sys._MEIPASS, relative_path)
 
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
+
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            import json
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump([], f)
+
+    return data_path
 
 class EmployeeManagementMainWindowEx(Ui_MainWindow):
 
@@ -55,12 +76,12 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
             padding: 2px;
             border-radius: 6px;
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
         }
 
         QDateEdit {
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
             border-radius: 6px;
             padding: 2px;
         }
@@ -90,7 +111,7 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         self.MainWindow.show()
 
     def get_json_path(self):
-        return resource_path("Final_Report/datasets/employees.json")
+        return ensure_file("employees.json")
 
     def get_image_dir(self):
         return resource_path("Final_Report/images")
@@ -265,7 +286,7 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
         self.current_employee = None
 
     def process_search(self):
-        keyword = self.lineEditSearch.text().lower()
+        keyword = self.lineEditSearch.text().lower().strip()
 
         emps = Employees()
         emps.import_json(self.get_json_path())
@@ -276,7 +297,17 @@ class EmployeeManagementMainWindowEx(Ui_MainWindow):
                 child.widget().deleteLater()
 
         for emp in emps.list:
-            if keyword in emp.full_name.lower() or keyword in emp.id.lower():
+            search_text = " ".join([
+                str(emp.id),
+                str(emp.full_name),
+                str(emp.role),
+                str(emp.phone),
+                str(emp.assigned_pets),
+                str(emp.status),
+                str(emp.gender)
+            ]).lower()
+
+            if keyword in search_text:
                 btn = QPushButton(f"{emp.id} - {emp.full_name}")
                 btn.setIcon(self.get_employee_icon(emp))
                 btn.setStyleSheet(self.get_button_style(emp))

@@ -14,11 +14,33 @@ from Final_Report.ui.Statistics.StatisticsMainWindow import Ui_StatisticsWindow
 
 def resource_path(relative_path):
     if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(sys.executable)
-    return os.path.join(base_path, relative_path)
+        return os.path.join(sys._MEIPASS, relative_path)
 
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
+
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump({}, f)
+
+    return data_path
 
 class StatisticsMainWindowEx(QMainWindow, Ui_StatisticsWindow):
 
@@ -60,8 +82,8 @@ class StatisticsMainWindowEx(QMainWindow, Ui_StatisticsWindow):
         self.verticalLayout.addWidget(self.canvas)
 
     def loadData(self):
-        pets_path = resource_path("Final_Report/datasets/pets.json")
-        adopters_path = resource_path("Final_Report/datasets/adopters.json")
+        pets_path = ensure_file("pets.json")
+        adopters_path = ensure_file("adopters.json")
 
         with open(pets_path, "r", encoding="utf-8") as f:
             pets_data = json.load(f)

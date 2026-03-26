@@ -33,5 +33,12 @@
         "phone": "0850284593",
         "service": "Grooming",
         "status": "Pending"
+    },
+    {
+        "full_name": "Smith",
+        "pet": "Cat",
+        "phone": "0347582947",
+        "service": "Bath",
+        "status": "Processing"
     }
 ]

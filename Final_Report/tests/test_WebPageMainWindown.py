@@ -16,7 +16,6 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
-# ================= LOAD FONTS =================
 def load_fonts():
     font_dir = resource_path("Final_Report/fonts")
 
@@ -35,25 +34,14 @@ def load_fonts():
             else:
                 print(f"load fail: {file}")
 
-
-# ================= MAIN =================
 def main():
-    # ===== FIX DPI (GIỮ GIỐNG QT DESIGNER) =====
     os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "1"
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     os.environ["QT_SCALE_FACTOR"] = "1.5"
 
     app = QApplication(sys.argv)
-
-    # ===== FIX STYLE (GIỮ MÀU DESIGNER) =====
     app.setStyle("Fusion")
-
-    # ===== LOAD FONT (GIỮ FONT DESIGNER) =====
     load_fonts()
-
-    #KHÔNG set app.setFont → giữ size + font từ Qt Designer
-
-    # ===== RUN APP =====
     window = WebPageMainWindowEx()
     window.show()
 

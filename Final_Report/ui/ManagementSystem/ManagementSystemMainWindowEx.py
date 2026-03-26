@@ -42,79 +42,45 @@ class ManagementSystemMainWindowEx(Ui_MainWindow):
     def showWindow(self):
         self.MainWindow.show()
 
-    # =========================
-
     def openEmployeeManagement(self):
-
         self.employee_window = QMainWindow()
-
         self.employee_ui = EmployeeManagementMainWindowEx()
         self.employee_ui.setupUi(self.employee_window)
-
         self.employee_ui.previous_window = self.MainWindow
-
         self.employee_window.show()
         self.MainWindow.hide()
 
-    # =========================
-
     def openCustomerManagement(self):
-
         self.customer_window = CustomerManagementMainWindowEx()
-
         self.customer_window.previous_window = self.MainWindow
-
         self.customer_window.show()
         self.MainWindow.hide()
 
-    # =========================
-
     def openPetManagement(self):
-
         self.pet_window = QMainWindow()
-
         self.pet_ui = PetManagementMainWindowEx()
         self.pet_ui.setupUi(self.pet_window)
-
         self.pet_ui.previous_window = self.MainWindow
-
         self.pet_window.show()
         self.MainWindow.hide()
 
-    # =========================
-
     def openAppointment(self):
-
         self.app_window = QMainWindow()
-
         self.app_ui = AppointmentMainWindowEx()
         self.app_ui.setupUi(self.app_window)
-
         self.app_ui.previous_window = self.MainWindow
-
-        self.app_window.show()
+        self.app_ui.showWindow()
         self.MainWindow.hide()
-
-    # =========================
 
     def openStatistics(self):
-
         self.stat_window = QMainWindow()
-
         self.stat_ui = StatisticsMainWindowEx()
         self.stat_ui.setupUi(self.stat_window)
-
         self.stat_ui.previous_window = self.MainWindow
-
         self.stat_window.show()
-
         self.MainWindow.hide()
 
-    # =========================
-
     def go_back(self):
-
         if hasattr(self, 'previous_window') and self.previous_window:
             self.previous_window.show()
-
         self.MainWindow.close()

@@ -21,6 +21,28 @@ def resource_path(relative_path):
 
     return os.path.join(project_root, relative_path)
 
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            import json
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump([], f)
+
+    return data_path
+
 
 class PetManagementMainWindowEx(Ui_MainWindow):
 
@@ -61,12 +83,12 @@ class PetManagementMainWindowEx(Ui_MainWindow):
             padding: 2px;
             border-radius: 6px;
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
         }
 
         QDateEdit {
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
             border-radius: 6px;
             padding: 2px;
         }
@@ -96,7 +118,7 @@ class PetManagementMainWindowEx(Ui_MainWindow):
         self.MainWindow.show()
 
     def get_json_path(self):
-        return resource_path("Final_Report/datasets/pets.json")
+        return ensure_file("pets.json")
 
     def get_image_dir(self):
         return resource_path("Final_Report/images")
@@ -235,8 +257,16 @@ class PetManagementMainWindowEx(Ui_MainWindow):
 
     def details_closed(self, event):
         self.display_pets()
-        event.accept()
+        if self.current_pet:
+            pets = Pets()
+            pets.import_json(self.get_json_path())
 
+            for p in pets.list:
+                if p.id == self.current_pet.id:
+                    self.view_detail(p)
+                    break
+
+        event.accept()
     def process_update(self):
         if self.current_pet is None:
             self.showMessage("Warning", "Please select a pet first!", QMessageBox.Icon.Warning)
@@ -310,7 +340,17 @@ class PetManagementMainWindowEx(Ui_MainWindow):
                 child.widget().deleteLater()
 
         for pet in pets.list:
-            if keyword in pet.name.lower() or keyword in pet.id.lower():
+            searchable_text = " ".join([
+                str(pet.id),
+                str(pet.name),
+                str(pet.species),
+                str(pet.health_status),
+                str(pet.gender),
+                str(pet.adoption_status),
+                str(pet.rescue_date)
+            ]).lower()
+
+            if keyword in searchable_text:
                 btn = QPushButton(f"{pet.id} - {pet.name}")
                 btn.setIcon(self.get_pet_icon(pet))
                 btn.setIconSize(QSize(24, 24))

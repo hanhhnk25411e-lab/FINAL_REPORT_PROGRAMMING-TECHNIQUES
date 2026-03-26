@@ -12,10 +12,35 @@ from Final_Report.ui.CustomerManagement.CustomerManagementMainWindow import Ui_M
 
 def resource_path(relative_path):
     if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(sys.executable)
-    return os.path.join(base_path, relative_path)
+        return os.path.join(sys._MEIPASS, relative_path)
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
+
+
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            import json
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump([], f)
+
+    return data_path
 
 
 class CustomerManagementMainWindowEx(QMainWindow):
@@ -28,12 +53,13 @@ class CustomerManagementMainWindowEx(QMainWindow):
 
         self.ui.lineEditSearch.setText("")
 
-        self.file_path = resource_path("Final_Report/datasets/customers.json")
+        self.file_path = ensure_file("customers.json")
 
         self.customers = self.load_data()
         self.display_data(self.customers)
 
-        self.ui.lineEditSearch.textChanged.connect(self.search_customer)
+        self.ui.lineEditSearch.returnPressed.connect(self.search_customer)
+
         self.ui.tableWidgetCustomer.cellChanged.connect(self.update_data_from_table)
         self.ui.pushButtonAdd.clicked.connect(self.add_customer)
         self.ui.pushButtonBack.clicked.connect(self.go_back)
@@ -42,7 +68,7 @@ class CustomerManagementMainWindowEx(QMainWindow):
         QPushButton {
             background-color: #2e7d32;
             color: white;
-            padding: 10px;
+            padding: 6px;
             border-radius: 8px;
         }
         QPushButton:hover {
@@ -151,13 +177,26 @@ class CustomerManagementMainWindowEx(QMainWindow):
             btn.setStyleSheet("background-color:#c62828;color:white;border-radius:12px;")
 
     def search_customer(self):
-        query = self.ui.lineEditSearch.text().lower()
+        query = self.ui.lineEditSearch.text().lower().strip()
 
         if not query:
             self.display_data(self.customers)
             return
 
-        results = [c for c in self.customers if query in c.full_name.lower() or query in c.phone]
+        results = []
+
+        for c in self.customers:
+            searchable_text = " ".join([
+                str(c.full_name),
+                str(c.pet),
+                str(c.phone),
+                str(c.service),
+                str(c.status)
+            ]).lower()
+
+            if query in searchable_text:
+                results.append(c)
+
         self.display_data(results)
 
     def add_customer(self):

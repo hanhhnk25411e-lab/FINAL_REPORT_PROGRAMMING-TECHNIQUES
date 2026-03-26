@@ -15,10 +15,34 @@ from Final_Report.ui.PetManagement.PetDetailsMainWindow import Ui_MainWindow
 
 def resource_path(relative_path):
     if hasattr(sys, "_MEIPASS"):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(sys.executable)
-    return os.path.join(base_path, relative_path)
+        return os.path.join(sys._MEIPASS, relative_path)
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+
+    return os.path.join(project_root, relative_path.replace("Final_Report/", ""))
+
+def get_data_path(filename):
+    base = resource_path("Final_Report/PawsResQ")
+    os.makedirs(base, exist_ok=True)
+    return os.path.join(base, filename)
+
+
+def ensure_file(filename):
+    data_path = get_data_path(filename)
+
+    if not os.path.exists(data_path):
+        source = resource_path(f"Final_Report/datasets/{filename}")
+
+        if os.path.exists(source):
+            import shutil
+            shutil.copy(source, data_path)
+        else:
+            import json
+            with open(data_path, "w", encoding="utf-8") as f:
+                json.dump([], f)
+
+    return data_path
 
 
 class PetDetailsMainWindowEx(Ui_MainWindow):
@@ -32,14 +56,15 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
 
         self.current_pet_id = None
 
-        self.path_rescue = resource_path("Final_Report/datasets/rescue_cases.json")
-        self.path_medical = resource_path("Final_Report/datasets/medical_records.json")
-        self.path_adopter = resource_path("Final_Report/datasets/adopters.json")
-        self.path_pet = resource_path("Final_Report/datasets/pets.json")
+        self.path_rescue = ensure_file("rescue_cases.json")
+        self.path_medical = ensure_file("medical_records.json")
+        self.path_adopter = ensure_file("adopters.json")
+        self.path_pet = ensure_file("pets.json")
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
+
 
         self.tableWidget.setColumnCount(3)
         self.tableWidget.setHorizontalHeaderLabels([
@@ -64,19 +89,25 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         }
 
         QLineEdit {
-            border: 2px solid #2e7d32;
+            padding: 2px;
             border-radius: 6px;
-            padding: 6px;
             background-color: white;
-            color: black;
+            color: rgb(17, 46, 13);
+            border: 0.5px solid #2e7d32;
         }
-
+        QTextEdit {
+            padding: 2px;
+            border-radius: 6px;
+            background-color: white;
+            color: rgb(17, 46, 13);
+            border: 0.5px solid #2e7d32;
+        }
         QDateEdit {
             background-color: white;
-            color: black;
-            border: 2px solid #2e7d32;
+            color: rgb(17, 46, 13);
             border-radius: 6px;
-            padding: 4px;
+            padding: 2px;
+            border: 0.5px solid #2e7d32;
         }
 
         QRadioButton {
@@ -109,12 +140,10 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         self.dateEditRescuDate.setStyleSheet("background:white;color:black;")
         self.dateEditMedicalDate.setStyleSheet("background:white;color:black;")
         self.dateEditAdoptDate.setStyleSheet("background:white;color:black;")
+        self.tabWidget.currentChanged.connect(self.set_focus_by_tab)
 
     def showWindow(self):
         self.MainWindow.show()
-
-
-# ================= SIGNAL =================
 
     def setupSignals(self):
         self.pushButtonBack.clicked.connect(self.go_back)
@@ -123,14 +152,8 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         self.pushButtonAddRecord.clicked.connect(self.add_medical)
         self.tableWidget.cellClicked.connect(self.load_history_detail)
 
-
-# ================= BACK =================
-
     def go_back(self):
         self.MainWindow.close()
-
-
-# ================= LOAD PET =================
 
     def load_pet(self, pet_id, pet_name):
         self.current_pet_id = pet_id
@@ -143,9 +166,6 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         self.load_rescue_case()
         self.load_medical_records()
         self.load_adopter()
-
-
-# ================= RESCUE =================
 
     def load_rescue_case(self):
         for it in self.lr.list:
@@ -179,9 +199,6 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         self.lr.update_rescue_case(rc)
         self.lr.export_json(self.path_rescue)
         QMessageBox.information(self.MainWindow, "Success", "Rescue case updated")
-
-
-# ================= MEDICAL =================
 
     def load_medical_records(self):
         self.tableWidget.setRowCount(0)
@@ -232,9 +249,6 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
 
         QMessageBox.information(self.MainWindow, "Success", "Medical record added")
 
-
-# ================= ADD / UPDATE =================
-
     def add_new_information(self):
         index = self.tabWidget.currentIndex()
 
@@ -251,10 +265,24 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         elif index == 2:
             self.update_adopter()
 
-
-# ================= ADOPTER =================
-
     def load_adopter(self):
+        pets = Pets()
+        pets.import_json(self.path_pet)
+
+        pet_status = "Not adopted"
+        for p in pets.list:
+            if p.id == self.current_pet_id:
+                pet_status = p.adoption_status
+                break
+
+        if pet_status.lower() != "adopted":
+            self.lineEditAdopterName.clear()
+            self.lineEditAdopterId.clear()
+            self.lineEditPhoneNumber.clear()
+            self.lineEditAddress.clear()
+            return
+
+        # nếu adopted thì mới load
         for it in self.la.list:
             if it.pet_id == self.current_pet_id:
                 self.lineEditAdopterName.setText(it.full_name)
@@ -265,11 +293,6 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
                 date = QDate.fromString(it.adopted_date, "yyyy-MM-dd")
                 self.dateEditAdoptDate.setDate(date)
                 return
-
-        self.lineEditAdopterName.clear()
-        self.lineEditAdopterId.clear()
-        self.lineEditPhoneNumber.clear()
-        self.lineEditAddress.clear()
 
     def add_adopter(self):
         name = self.lineEditAdopterName.text()
@@ -323,8 +346,6 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
         QMessageBox.information(self.MainWindow, "Success", "Adopter updated")
 
 
-# ================= PET STATUS =================
-
     def update_pet_status(self, status):
         pets = Pets()
         pets.import_json(self.path_pet)
@@ -335,3 +356,9 @@ class PetDetailsMainWindowEx(Ui_MainWindow):
                 break
 
         pets.export_json(self.path_pet)
+
+    def set_focus_by_tab(self, index):
+        if index == 0:
+            self.lineEditPetName.setFocus()
+        elif index == 1:
+            self.lineEditPIC.setFocus()
